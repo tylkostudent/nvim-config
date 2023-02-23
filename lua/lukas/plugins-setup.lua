@@ -58,6 +58,11 @@ local status, packer = pcall(require, "packer")
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make"})
   use({ "nvim-telescope/telescope.nvim", branch = "0.1.x"}) 
   
+  --autocompletion
+  
+
+
+  --lsp 
   use {
   'VonHeikemen/lsp-zero.nvim',
   branch = 'v1.x',
@@ -78,8 +83,18 @@ local status, packer = pcall(require, "packer")
     -- Snippets
     {'L3MON4D3/LuaSnip'},             -- Required
     {'rafamadriz/friendly-snippets'}, -- Optional
-  }
-}
+  }}
+  use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
+  use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
+
+  -- treesitter configuration
+  use({
+   "nvim-treesitter/nvim-treesitter",
+    run = function()
+    local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+      ts_update()
+    end,
+  })
 
   if packer_bootstrap then
     require("packer").sync()
