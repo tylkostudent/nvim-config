@@ -1,0 +1,8 @@
+[] change to multi file
+    [] file for lazy-nvim
+    [] file for each plugin:
+	Structure:
+	- options 
+	- remaps 
+
+
