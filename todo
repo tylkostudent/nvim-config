@@ -1,8 +1,16 @@
+--------MINIMUM PREP----------------------
 [] change to multi file
+    [] file for basic remaps
     [] file for lazy-nvim
     [] file for each plugin:
 	Structure:
 	- options 
-	- remaps 
+	- remaps 	
+[] git integration (check if already exits)
+[] add verilog, c, python, go LSP
+------FURTHER DEVELOPMENT-----------------
+[] develop and add lua script for checking corectness 
+of multifile verilog projects 
+[] what is lsp and how to make one for verilog 
 
 
