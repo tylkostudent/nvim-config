@@ -1,7 +1,7 @@
 --------MINIMUM PREP----------------------
 [] change to multi file
-    [] file for basic remaps
-    [] file for lazy-nvim
+    [done] file for basic remaps
+    [done] file for lazy-nvim
     [] file for each plugin:
 	Structure:
 	- options 
