@@ -24,7 +24,7 @@ require('lazy').setup({
   -- git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
-
+  'nvim-tree/nvim-web-devicons',
   -- detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
@@ -37,6 +37,8 @@ require('lazy').setup({
   -- useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },
   require("lukas.plugins.color_scheme"),
+  require("lukas.plugins.lualine"),
+  --vim.cmd [[colorscheme nightfly]]
   -- "gc" to comment visual regions/lines
   { 'numtostr/comment.nvim', opts = {} },
   require("lukas.plugins.telescope"),

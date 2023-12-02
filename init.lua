@@ -41,12 +41,13 @@ P.S. You can delete this when you're done too. It's your config now :)
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 
 require("lukas.options")
-require("lukas.base_remaps")
+require("lukas.remaps")
 require("lukas.lazy")
+vim.cmd("colorscheme nightfly")
 -- [[ configure telescope ]]
 -- see `:help telescope` and `:help telescope.setup()`
 require('telescope').setup {
-  defaults = {
+    defaults = {
     mappings = {
       i = {
         ['<c-u>'] = false,
@@ -58,7 +59,6 @@ require('telescope').setup {
 
 -- enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
-
 -- telescope live_grep in git root
 -- function to find the git root directory based on the current buffer's path
 local function find_git_root()

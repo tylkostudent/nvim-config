@@ -1,8 +1,6 @@
 return {
-  -- theme inspired by atom
-  'navarasu/onedark.nvim',
-  priority = 1000,
-  config = function()
-      vim.cmd.colorscheme 'onedark'
-  end,
+  "bluz71/vim-nightfly-colors", 
+  name = "nightfly", 
+  lazy = false, 
+  priority = 1000 
 }

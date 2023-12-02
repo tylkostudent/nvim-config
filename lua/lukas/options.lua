@@ -4,7 +4,7 @@
 
 -- set highlight on search
 vim.o.hlsearch = false
-
+vim.api.nvim_set_option("clipboard","unnamed")
 -- make line numbers default
 vim.wo.number = true
 
