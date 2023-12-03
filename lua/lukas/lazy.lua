@@ -1,7 +1,7 @@
 --require("lukas.plugins.lsp")
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system {
+  vim.fn. system {
     'git',
     'clone',
     '--filter=blob:none',
@@ -27,7 +27,8 @@ require('lazy').setup({
   'nvim-tree/nvim-web-devicons',
   -- detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
-
+  --rust
+  'simrat39/rust-tools.nvim',
   -- note: this is where your plugins related to lsp can be installed.
   --  the configuration is done below. search for lspconfig to find it below.
   require("lukas.plugins.lsp"),
@@ -37,6 +38,7 @@ require('lazy').setup({
   -- useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },
   require("lukas.plugins.color_scheme"),
+  require("lukas.plugins.indent"),
   require("lukas.plugins.lualine"),
   --vim.cmd [[colorscheme nightfly]]
   -- "gc" to comment visual regions/lines
@@ -44,7 +46,6 @@ require('lazy').setup({
   require("lukas.plugins.telescope"),
   -- fuzzy finder (files, lsp, etc)
   require("lukas.plugins.treesitter"),
-
   -- note: next step on your neovim journey: add/configure additional "plugins" for kickstart
   --       these are some example plugins that i've included in the kickstart repository.
   --       uncomment any of the lines below to enable them.

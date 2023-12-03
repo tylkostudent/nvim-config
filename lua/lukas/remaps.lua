@@ -5,8 +5,22 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 vim.keymap.set('n', '<Leader>tt', '<cmd>:Neotree toggle=true<CR>')
-vim.keymap.set('n', '9', '0')
-vim.keymap.set('n', '0', '$')
+vim.keymap.set({'n'}, '-', '$')
+vim.keymap.set({'v'}, '-', '$')
+
+--lua snip
+local luasnip = require("luasnip")
+vim.keymap.set({"i"}, "<C-K>", function() luasnip.expand() end, {silent = true} )
+vim.keymap.set({"i", "s"}, "<C-L>", function() luasnip.jump( 1) end, {silent = true})
+vim.keymap.set({"i", "s"}, "<C-J>", function() luasnip.jump(-1) end, {silent = true})
+
+vim.keymap.set({"i", "s"}, "<C-E>", function()
+  if luasnip.choice_active() then
+    luasnip.change_choice(1)
+  end
+end, {silent = true})
+
+vim.keymap.set('o', '-', '$', {desc = 'remap end line in oprator mode to /"_/"'})
 vim.keymap.set('n', '<Leader>o', 'o<ESC>',{desc = 'make new line under without leaving normal mode'})
 --nnoremap <Leader>o o<Esc>0"_D
 --nnoremap <Leader>O O<Esc>0"_D
