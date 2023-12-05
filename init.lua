@@ -50,4 +50,5 @@ require("lukas.setup.rust_analyzer_setup")
 require("lukas.setup.rust_tools_setup")
 require("lukas.options")
 require("lukas.remaps")
+require("lukas.setup.indent_setup")
 

@@ -19,7 +19,6 @@ vim.keymap.set({"i", "s"}, "<C-E>", function()
     luasnip.change_choice(1)
   end
 end, {silent = true})
-
 vim.keymap.set('o', '-', '$', {desc = 'remap end line in oprator mode to /"_/"'})
 vim.keymap.set('n', '<Leader>o', 'o<ESC>',{desc = 'make new line under without leaving normal mode'})
 --nnoremap <Leader>o o<Esc>0"_D
