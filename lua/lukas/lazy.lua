@@ -20,7 +20,6 @@ vim.opt.rtp:prepend(lazypath)
 --    as they will be available in your neovim runtime.
 require('lazy').setup({
   -- note: first, some plugins that don't require any configuration
-
   -- git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
@@ -59,5 +58,6 @@ require('lazy').setup({
   --
   --    for additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
   -- { import = 'custom.plugins' },
+  --
 }, {})
 

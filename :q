@@ -1,0 +1,111 @@
+'<,'>q
+help nvim
+q1
+Mason help
+MasonHlep
+MasonHelp
+w proc.v
+set tabstop 4
+set -h
+set
+set tabstop=4
+set tab=4
+set shiftwidth=4
+set shiftspace=4
+!q
+LuaLineNotices
+LualineNotices
+Telescope keymaps
+Treesitter
+st
+TreeOpen
+NvimTreeTogle
+NvimTreeToggle
+we
+clear
+wq init.lua
+lazy
+Lazy health 
+Lazy 
+Lazy checkhealth
+Lazy CheckHealth
+Neotree filesystem reveal right
+Neotree toggle=false
+Neotree toggle=true
+i:
+wq main.py
+Neotree
+h neo-tree-commands
+close
+help
+Q!
+git
+v
+so'
+checkhealth TreeSitter
+!git add .
+!git commit -m "lazy in separate file"
+h
+c\vs
+!cd .config/nvim
+.!ls
+golang
+!go 
+!go version
+help telescope
+q:q
+EX
+cs
+splity
+res 10
+term
+split 3
+split res30
+split
+term 
+term '
+split res 3
+res 3
+help lsp
+Masonm
+eX
+CargoReload
+Lq
+ex
+cheskhealth
+checkhealth
+Mason checkhealth
+!cd src/
+cArgo
+Cargo
+so
+LAzy
+!cargo init 
+h clipboard
+help r
+help Visual
+ew
+i
+w'
+W
+qw
+Wq
+hdl
+checkhealth Mason
+checkhealth 
+Mason
+hdl-checker --help
+Q
+hdl-checker
+hdl_checker
+hdl_checker --help
+Mason 
+lazy 
+vs
+Lazy
+q!
+w
+q
+Ex
+wq
+

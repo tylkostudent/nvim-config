@@ -17,6 +17,7 @@ Kickstart.nvim is a template for your own configuration.
   - https://learnxinyminutes.com/docs/lua/
 
 
+
   And then you can explore or search through `:help lua-guide`
   - https://neovim.io/doc/user/lua-guide.html
 
@@ -42,7 +43,6 @@ P.S. You can delete this when you're done too. It's your config now :)
 
 require("lukas.lazy")
 require("lukas.setup.telescope_setup")
-require("lukas.setup.treesitter_setup")
 require("lukas.setup.lsp_setup")
 require("lukas.setup.nvim-cmp_setup")
 require("lukas.setup.webicons_setup")
@@ -51,4 +51,3 @@ require("lukas.setup.rust_tools_setup")
 require("lukas.options")
 require("lukas.remaps")
 require("lukas.setup.indent_setup")
-
