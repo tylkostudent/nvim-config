@@ -8,6 +8,7 @@ return {
 
     -- adds lsp completion capabilities
     'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
 
     -- adds a number of user-friendly snippets
     'rafamadriz/friendly-snippets',
