@@ -1,0 +1,7 @@
+require("lukas.setup.indent_setup")
+require("lukas.setup.lsp_setup")
+require("lukas.setup.nvim-cmp_setup")
+require("lukas.setup.rust_analyzer_setup")
+require("lukas.setup.rust_tools_setup")
+require("lukas.setup.telescope_setup")
+require("lukas.setup.svlangserver_setup")
