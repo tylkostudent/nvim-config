@@ -23,13 +23,13 @@ require('lazy').setup({
   -- git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
-  'nvim-tree/nvim-web-devicons',
   -- detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
   --rust
   'simrat39/rust-tools.nvim',
   -- note: this is where your plugins related to lsp can be installed.
   --  the configuration is done below. search for lspconfig to find it below.
+  'michaeljsmith/vim-indent-object',
   require("lukas.plugins.lsp"),
   require("lukas.plugins.neotree"),
   require("lukas.plugins.autocompletion"),
@@ -45,19 +45,5 @@ require('lazy').setup({
   require("lukas.plugins.telescope"),
   -- fuzzy finder (files, lsp, etc)
   require("lukas.plugins.treesitter"),
-  -- note: next step on your neovim journey: add/configure additional "plugins" for kickstart
-  --       these are some example plugins that i've included in the kickstart repository.
-  --       uncomment any of the lines below to enable them.
-  -- require 'kickstart.plugins.autoformat',
-  -- require 'kickstart.plugins.debug',
-
-  -- note: the import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
-  --    you can use this folder to prevent any conflicts with this init.lua if you're interested in keeping
-  --    up-to-date with whatever is in the kickstart repo.
-  --    uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  --
-  --    for additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
-  -- { import = 'custom.plugins' },
-  --
 }, {})
 
