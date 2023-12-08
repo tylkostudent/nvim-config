@@ -39,7 +39,6 @@ require('lazy').setup({
   require("lukas.plugins.color_scheme"),
   require("lukas.plugins.indent"),
   require("lukas.plugins.lualine"),
-  --vim.cmd [[colorscheme nightfly]]
   -- "gc" to comment visual regions/lines
   { 'numtostr/comment.nvim', opts = {} },
   require("lukas.plugins.telescope"),
