@@ -7,18 +7,20 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 vim.keymap.set('n', '<Leader>tt', '<cmd>:Neotree toggle=true<CR>', {desc = 'toggle Neotree'})
 vim.keymap.set('n', '<Leader>tf', '<cmd>:Neotree focus<CR>', {desc = 'focus on Neotree'})
 --split remaps
-vim.keymap.set('n', 'ql', '<C-w>l', {desc = 'remap switching splits'})
-vim.keymap.set('n', 'qk', '<C-w>k', {desc = 'remap switching splits'})
-vim.keymap.set('n', 'qj', '<C-w>j', {desc = 'remap switching splits'})
-vim.keymap.set('n', 'qh', '<C-w>h', {desc = 'remap switching splits'})
+vim.keymap.set('n', 'q', '<C-w>', {desc = 'remap window mode'})
+--vim.keymap.set('n', 'ql', '<C-w>l', {desc = 'remap switching splits'})
+--vim.keymap.set('n', 'qk', '<C-w>k', {desc = 'remap switching splits'})
+--vim.keymap.set('n', 'qj', '<C-w>j', {desc = 'remap switching splits'})
+--vim.keymap.set('n', 'qh', '<C-w>h', {desc = 'remap switching splits'})
 vim.keymap.set('n', '<Leader>vs', '<cmd>:vs<CR>')
-
-
+vim.keymap.set('n', '<Leader>hs', '<cmd>:split<CR>')
+--vim.keymap.set('n', 'q+', '<C-w>+')
+--vim.keymap.set('n', 'q-', '<C-w>-')
 vim.keymap.set({'n'}, '-', '$')
 vim.keymap.set({'v'}, '-', '$')
 --lua snip
 local luasnip = require("luasnip")
-vim.keymap.set({"i"}, "<C-k>", function() luasnip.expand() end, {silent = true} )
+vim.keymap.set("i", "<C-k>", function() luasnip.expand() end, {silent = true} )
 vim.keymap.set({"i", "s"}, "<C-l>", function() luasnip.jump( 1) end, {silent = true})
 vim.keymap.set({"i", "s"}, "<C-j>", function() luasnip.jump(-1) end, {silent = true})
 
@@ -29,6 +31,7 @@ vim.keymap.set({"i", "s"}, "<C-e>", function()
 end, {silent = true})
 vim.keymap.set('o', '-', '$', {desc = 'remap end line in oprator mode to /"_/"'})
 vim.keymap.set('n', '<leader>o', 'o<esc>',{desc = 'make new line under without leaving normal mode'})
+vim.keymap.set('n', '<leader>O', 'O<esc>',{desc = 'make new line under without leaving normal mode'})
 --nnoremap <leader>o o<esc>0"_d
 --nnoremap <leader>o o<esc>0"_d
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] find recently opened files' })
