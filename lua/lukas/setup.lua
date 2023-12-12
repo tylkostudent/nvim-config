@@ -4,4 +4,6 @@ require("lukas.setup.nvim-cmp_setup")
 require("lukas.setup.rust_analyzer_setup")
 require("lukas.setup.rust_tools_setup")
 require("lukas.setup.telescope_setup")
-require("lukas.setup.verible_setup")
+require("lukas.setup.treesitter_setup")
+--require("lukas.setup.verible_setup")
+--
