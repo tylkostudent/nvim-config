@@ -7,7 +7,7 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 vim.keymap.set('n', '<Leader>tt', '<cmd>:Neotree toggle=true<CR>', {desc = 'toggle Neotree'})
 vim.keymap.set('n', '<Leader>tf', '<cmd>:Neotree focus<CR>', {desc = 'focus on Neotree'})
 --split remaps
-vim.keymap.set('n', 'q', '<C-w>', {desc = 'remap window mode'})
+vim.keymap.set('n', '<leader>w', '<C-w>', {desc = 'remap window mode'})
 --vim.keymap.set('n', 'ql', '<C-w>l', {desc = 'remap switching splits'})
 --vim.keymap.set('n', 'qk', '<C-w>k', {desc = 'remap switching splits'})
 --vim.keymap.set('n', 'qj', '<C-w>j', {desc = 'remap switching splits'})
