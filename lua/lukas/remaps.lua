@@ -52,7 +52,21 @@ vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc
 vim.keymap.set('n', '<leader>sG', ':livegrepgitroot<cr>', { desc = '[s]earch by [g]rep on git root' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[s]earch [d]iagnostics' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[s]earch [r]esume' })
-
+--escaping terminal 
+vim.cmd([[
+  :tnoremap <A-h> <C-\><C-N><C-w>h
+  :tnoremap <A-j> <C-\><C-N><C-w>j
+  :tnoremap <A-k> <C-\><C-N><C-w>k
+  :tnoremap <A-l> <C-\><C-N><C-w>l
+  :inoremap <A-h> <C-\><C-N><C-w>h
+  :inoremap <A-j> <C-\><C-N><C-w>j
+  :inoremap <A-k> <C-\><C-N><C-w>k
+  :inoremap <A-l> <C-\><C-N><C-w>l
+  :nnoremap <A-h> <C-w>h
+  :nnoremap <A-j> <C-w>j
+  :nnoremap <A-k> <C-w>k
+  :nnoremap <A-l> <C-w>l
+]])
 -- [[ configure treesitter ]]
 -- see `:help nvim-treesitter`
 -- defer treesitter setup after first render to improve startup time of 'nvim {filename}'
