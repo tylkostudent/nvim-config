@@ -20,11 +20,11 @@ cmp.setup {
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C>'] = cmp.mapping.complete {},
-    ['<CR>'] = cmp.mapping.confirm {
+    [' '] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     },
-    [' '] = cmp.mapping.abort(),
+    ['<CR>'] = cmp.mapping.abort(),
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -47,6 +47,6 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
-    {name = 'buffer'},
+    { name = 'buffer'},
   },
 }
