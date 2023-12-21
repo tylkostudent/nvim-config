@@ -44,6 +44,7 @@ require('lazy').setup({
   require("lukas.plugins.telescope"),
   -- fuzzy finder (files, lsp, etc)
   require("lukas.plugins.treesitter"),
-  "InES-HPMM/zhaw-snippets",
+  --"InES-HPMM/zhaw-snippets",
+  require("lukas.plugins.verilog_module_instance"),
 }, {})
 
