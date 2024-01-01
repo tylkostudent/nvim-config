@@ -53,9 +53,6 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[s]earch [r]esume' })
 
 vim.keymap.set('n', '<C-w>>', '<C-w>5>')
-vim.keymap.set('n', '<C-w><', '<C-w>5<')
-vim.keymap.set('n', '<C-w>-', '<C-w>5-')
-vim.keymap.set('n', '<C-w>+', '<C-w>5+')
 
 --escaping terminal 
 vim.cmd([[
