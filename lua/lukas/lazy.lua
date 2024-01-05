@@ -46,5 +46,8 @@ require('lazy').setup({
   require("lukas.plugins.treesitter"),
   --"InES-HPMM/zhaw-snippets",
   require("lukas.plugins.verilog_module_instance"),
+  'morganp/vim-SystemVerilogUVM.vim',
+  require("lukas.plugins.tmux_vim"),
+  require("lukas.plugins.search_replace"),
 }, {})
 
