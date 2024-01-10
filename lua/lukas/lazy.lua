@@ -49,5 +49,7 @@ require('lazy').setup({
   'morganp/vim-SystemVerilogUVM.vim',
   require("lukas.plugins.tmux_vim"),
   require("lukas.plugins.search_replace"),
+  'nvim-lua/plenary.nvim', -- " don't forget to add this one if you don't have it yet!
+  'ThePrimeagen/harpoon',
 }, {})
 

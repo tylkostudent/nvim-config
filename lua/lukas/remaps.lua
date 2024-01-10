@@ -72,6 +72,12 @@ vim.cmd([[
   :nnoremap <A-k> <C-w>k
   :nnoremap <A-l> <C-w>l
 ]])
+vim.keymap.set("n", "ma" ,"<cmd>lua require(\"harpoon.mark\").add_file()<CR>" ,{ desc = 'harpoon mark file' })
+vim.keymap.set("n", "mn" ,"<cmd>lua require(\"harpoon.ui\").nav_next()<CR>" ,{ desc = 'harpoon mark file' })
+vim.keymap.set("n", "mp" ,"<cmd>lua require(\"harpoon.ui\").nav_prev()<CR>" ,{ desc = 'harpoon mark file' })
+vim.keymap.set("n", "mo" ,"<cmd>lua require(\"harpoon.ui\").toggle_quick_menu()<CR>" ,{ desc = 'harpoon mark file' })
+vim.keymap.set("n", "mr" ,"<cmd>lua require(\"harpoon.mark\").rm_file()<CR>" ,{ desc = 'harpoon mark file' })
+vim.keymap.set("n", "mc" ,"<cmd>lua require(\"harpoon.mark\").clear_all()<CR>" ,{ desc = 'harpoon mark file' })
 -- [[ configure treesitter ]]
 -- see `:help nvim-treesitter`
 -- defer treesitter setup after first render to improve startup time of 'nvim {filename}'
