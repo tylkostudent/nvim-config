@@ -28,7 +28,10 @@ vim.keymap.set({"i", "s"}, "<C-e>", function()
     luasnip.change_choice(1)
   end
 end, {silent = true})
-vim.keymap.set('o', '-', '$', {desc = 'remap end line in oprator mode to /"_/"'})
+
+
+
+vim.keymap.set('o', '-', '$', {desc = 'remap end line in oprator mode to /"-/"'})
 vim.keymap.set('n', '<leader>o', 'o<esc>',{desc = 'make new line under without leaving normal mode'})
 vim.keymap.set('n', '<leader>O', 'O<esc>',{desc = 'make new line under without leaving normal mode'})
 --nnoremap <leader>o o<esc>0"_d
@@ -47,8 +50,24 @@ vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc
 vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[s]earch [f]iles' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[s]earch [h]elp' })
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[s]earch current [w]ord' })
+vim.keymap.set('v', '<leader>sc', function ()
+  local text = require("lukas.custom_functions").get_visual_selection()
+  require"telescope.builtin".grep_string({default_text = text})
+end
+, {desc = '[s]earch [c]urrent buffer'})
+vim.keymap.set('v', '<leader>sa', function ()
+  local text = require("lukas.custom_functions").get_visual_selection()
+  require('telescope.builtin').live_grep({ default_text = text })
+end, {desc = '[s]earch [a]ll buffers'})
+--[[vim.keypam.set("v", '<leader>rc', function ()
+  local text = require("lukas.custom_functions").get_visual_selection()
+  local cmd = ":%s/"+text+"//gc"
+  vim.cmd(cmd)
+end, {desc = '[r]eplace selection in [c]urrent buffer'})]]
+vim.keymap.set("n", '<leader>rc', "<cmd>:SearchReplaceSingleBufferCWORD<CR>", {desc = '[r]eplace [w]ord'})
+vim.keymap.set("n", '<leader>rC', "<cmd>:SearchReplaceMultiBufferCWORD<CR>", {desc = '[r]eplace [w]ord in all buffers'})
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[s]earch by [g]rep' })
-vim.keymap.set('n', '<leader>sG', ':livegrepgitroot<cr>', { desc = '[s]earch by [g]rep on git root' })
+vim.keymap.set('n', '<leader>sG', ':LiveGrepGitRoot<cr>', { desc = '[s]earch by [g]rep on git root' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[s]earch [d]iagnostics' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[s]earch [r]esume' })
 
@@ -59,14 +78,14 @@ vim.keymap.set('n', '<C-w>+', '<C-w>5+')
 
 --escaping terminal 
 vim.cmd([[
-  :tnoremap <A-h> <C-\><C-N><C-w>h
-  :tnoremap <A-j> <C-\><C-N><C-w>j
-  :tnoremap <A-k> <C-\><C-N><C-w>k
-  :tnoremap <A-l> <C-\><C-N><C-w>l
-  :inoremap <A-h> <C-\><C-N><C-w>h
-  :inoremap <A-j> <C-\><C-N><C-w>j
-  :inoremap <A-k> <C-\><C-N><C-w>k
-  :inoremap <A-l> <C-\><C-N><C-w>l
+  :noremap <A-h> <C-\><C-N><C-w>h
+  :noremap <A-j> <C-\><C-N><C-w>j
+  :noremap <A-k> <C-\><C-N><C-w>k
+  :noremap <A-l> <C-\><C-N><C-w>l
+  :noremap <A-h> <C-\><C-N><C-w>h
+  :noremap <A-j> <C-\><C-N><C-w>j
+  :noremap <A-k> <C-\><C-N><C-w>k
+  :noremap <A-l> <C-\><C-N><C-w>l
   :nnoremap <A-h> <C-w>h
   :nnoremap <A-j> <C-w>j
   :nnoremap <A-k> <C-w>k
