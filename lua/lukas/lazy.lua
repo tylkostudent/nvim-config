@@ -52,5 +52,11 @@ require('lazy').setup({
   'nvim-lua/plenary.nvim', -- " don't forget to add this one if you don't have it yet!
   'ThePrimeagen/harpoon',
   'dkprice/vim-easygrep',
+  {
+  'VonHeikemen/fine-cmdline.nvim',
+  requires = {
+    {'MunifTanjim/nui.nvim'}
+  },
+}
 }, {})
 

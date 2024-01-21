@@ -21,4 +21,7 @@ ensure_installed = {
 },
 -- auto install above language parsers
 auto_install = true,
+ignore_install = {},
+sync_install = true,
+modules = {},
 })
