@@ -1,5 +1,9 @@
 vim.keymap.set('n', '<Leader>hs', '<cmd>:split<CR>')
 vim.keymap.set('n', '<Leader>vs', '<cmd>:vs<CR>')
+
+vim.keymap.set('i', "<A-]>", "<esc>")
+vim.keymap.set('i', "<A-[>", "<esc>")
+
 --vim.keymap.set('n', 'q+', '<C-w>+')
 --vim.keymap.set('n', 'q-', '<C-w>-')
 vim.keymap.set({'n'}, '-', '$')
@@ -48,10 +52,16 @@ vim.keymap.set('v', '<leader>a]', 'd<ESC>i[]<ESC>p')
 vim.keymap.set('v', '<leader>a{', 'd<ESC>i{}<ESC>p')
 vim.keymap.set('v', '<leader>a}', 'd<ESC>i{}<ESC>p')
 
+vim.keymap.set('n', "]e", function()
+  vim.diagnostic.goto_next()
+end, {desc = "goto prev diagnostic"})
+vim.keymap.set('n', "[e", function()
+  vim.diagnostic.goto_prev()
+end, {desc = "goto prev diagnostic"})
 
 vim.keymap.set('n', 'dio', 'di(')
 vim.keymap.set('n', 'Dio', '"_di(')
-vim.keymap.set('n', '<CR>', '<cmd>FineCmdline<CR>', {noremap = true})
+vim.keymap.set('n', ':', '<cmd>FineCmdline<CR>', {noremap = true})
 --escaping terminal 
 vim.cmd([[
   :noremap <A-h> <C-\><C-N><C-w>h

@@ -61,3 +61,7 @@ vim.opt.shiftwidth = 4 -- Number of spaces inserted when indenting
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
 vim.cmd("colorscheme nightfly")
+vim.cmd("set colorcolumn=100");
+vim.cmd("set relativenumber");
+vim.cmd("set cursorline")
+vim.cmd("set scrolloff=3")

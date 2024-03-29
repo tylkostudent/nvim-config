@@ -18,6 +18,8 @@ ensure_installed = {
 "python",
 "rust",
 "go",
+"markdown",
+"markdown_inline",
 },
 -- auto install above language parsers
 auto_install = true,
