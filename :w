@@ -5,6 +5,5 @@ require("lukas.options")
 require("lukas.remaps")
 vim.cmd([[:TSEnable highlight<CR>]])
 vim.diagnostic.config({
-	underline = {severity = vim.diagnostic.severity.ERROR},
-	virtual_text = {severity = vim.diagnostic.severity.ERROR},
+  signs = { text = { [vim.diagnostic.severity.ERROR] = 'E' } }
 })

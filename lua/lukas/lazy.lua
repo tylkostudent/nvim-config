@@ -55,6 +55,7 @@ require('lazy').setup({
   'dkprice/vim-easygrep',
   {
   'VonHeikemen/fine-cmdline.nvim',
+  'kevinhwang91/nvim-bqf',
   requires = {
     {'MunifTanjim/nui.nvim'}
   },
