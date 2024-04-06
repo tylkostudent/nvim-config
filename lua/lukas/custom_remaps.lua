@@ -85,4 +85,11 @@ vim.keymap.set("n", "<leader>lx", function()
     vim.diagnostic.config({
         virtual_text = isLspDiagnosticsVisible,
         underline = isLspDiagnosticsVisible
-    }) end)
+    }) 
+end)
+vim.keymap.set('n', '<leader>lo', '<cmd>:copen<CR>')
+vim.keymap.set('n', '<leader>lc', '<cmd>:cclose<CR>')
+vim.keymap.set('n', ']q', '<cmd>:cnext<CR>')
+vim.keymap.set('n', '[q', '<cmd>:cprevious<CR>')
+vim.keymap.set('n', '<leader>ln', '<cmd>:cnewer<CR>')
+vim.keymap.set('n', '<leader>lp', '<cmd>:colder<CR>')
