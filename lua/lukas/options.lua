@@ -65,3 +65,8 @@ vim.cmd("set colorcolumn=100");
 vim.cmd("set relativenumber");
 vim.cmd("set cursorline")
 vim.cmd("set scrolloff=3")
+vim.diagnostic.config({
+	severity_sort = true,
+	underline = {severity = vim.diagnostic.severity.ERROR},
+	virtual_text = {severity = vim.diagnostic.severity.ERROR},
+})
