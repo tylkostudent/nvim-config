@@ -53,10 +53,13 @@ require('lazy').setup({
   'ThePrimeagen/harpoon',
   'dkprice/vim-easygrep',
   {
-  'VonHeikemen/fine-cmdline.nvim',
-  requires = {
-    {'MunifTanjim/nui.nvim'}
+    'VonHeikemen/fine-cmdline.nvim',
+    requires = {
+      {'MunifTanjim/nui.nvim'}
+    },
   },
-}
+  require("lukas.plugins.obsidian"),
+  require("lukas.plugins.markdown_preview"),
+  'Vaisakhkm2625/hologram-math-preview.nvim',
 }, {})
 

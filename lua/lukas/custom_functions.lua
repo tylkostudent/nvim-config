@@ -10,4 +10,6 @@ Func.get_visual_selection = function()
       return ""
     end
 end
+
+
 return Func

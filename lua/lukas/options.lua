@@ -2,6 +2,8 @@
 -- see `:help vim.o`
 -- note: you can change these options as you wish!
 
+vim.cmd("colorscheme vscode")
+
 -- set highlight on search
 vim.o.hlsearch = false
 vim.api.nvim_set_option("clipboard","unnamed")
@@ -10,7 +12,7 @@ vim.wo.number = true
 
 -- enable mouse mode
 vim.o.mouse = 'a'
-
+vim.g.have_nerd_font=true
 -- sync clipboard between os and neovim.
 --  remove this option if you want your os clipboard to remain independent.
 --  see `:help 'clipboard'`
@@ -60,7 +62,6 @@ vim.opt.tabstop = 4 -- A TAB character looks like 4 spaces
 vim.opt.shiftwidth = 4 -- Number of spaces inserted when indenting
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
-vim.cmd("colorscheme nightfly")
 vim.cmd("set colorcolumn=100");
 vim.cmd("set relativenumber");
 vim.cmd("set cursorline")
