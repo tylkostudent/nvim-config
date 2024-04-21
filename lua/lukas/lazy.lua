@@ -60,6 +60,6 @@ require('lazy').setup({
   },
   require("lukas.plugins.obsidian"),
   require("lukas.plugins.markdown_preview"),
-  'Vaisakhkm2625/hologram-math-preview.nvim',
+  require("lukas.plugins.quickfix"),
 }, {})
 
