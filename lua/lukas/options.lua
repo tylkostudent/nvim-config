@@ -2,7 +2,7 @@
 -- see `:help vim.o`
 -- note: you can change these options as you wish!
 
-vim.cmd("colorscheme vscode")
+vim.cmd("colorscheme modus-vivendi")
 
 -- set highlight on search
 vim.o.hlsearch = false
