@@ -19,14 +19,6 @@ return {
   opts = {
     workspaces = {
       {
-        name = "personal",
-        path = "~/vaults/personal",
-      },
-      {
-        name = "work",
-        path = "~/vaults/work",
-      },
-      {
         name = "buf-parent",
         path = function()
         return assert(vim.fs.dirname(vim.api.nvim_buf_get_name(0)))

@@ -98,3 +98,5 @@ vim.keymap.set('n', '<leader>lp', '<cmd>:colder<CR>')
 vim.keymap.set('n', '<leader>pe', function ()
   require("hologram-math-preview").show_all_eq()
 end)
+
+--vim.keymap.set({'i', 'n'}, "<C-s>", require("telescope."))

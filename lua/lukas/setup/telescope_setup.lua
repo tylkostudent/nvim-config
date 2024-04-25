@@ -1,9 +1,20 @@
-require('telescope').setup {
+local actions = require("telescope.actions")
+require('telescope').setup { 
     defaults = {
       mappings = {
+        n = {
+          ['<C-s>'] = actions.send_selected_to_qflist + actions.open_qflist,
+        },
         i = {
+          ['<C-s>'] = actions.send_selected_to_qflist + actions.open_qflist,
           ['<c-u>'] = false,
           ['<c-d>'] = false,
+        },
+      },
+      pickers = {
+        -- Default config for builtin pickers:
+        find_files = {
+          no_ignore = true,
         },
       },
     },
@@ -44,4 +55,3 @@ local function live_grep_git_root()
 end
 
 vim.api.nvim_create_user_command('LiveGrepGitRoot', live_grep_git_root, {})
-

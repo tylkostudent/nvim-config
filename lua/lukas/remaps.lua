@@ -25,8 +25,6 @@ end, {silent = true})
 
 
 
---nnoremap <leader>o o<esc>0"_d
---nnoremap <leader>o o<esc>0"_d
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] find recently opened files' })
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] find existing buffers' })
 vim.keymap.set('n', '<leader>/', function()
@@ -44,7 +42,19 @@ vim.keymap.set('n', '<leader>gb', require('telescope.builtin').git_branches, { d
 vim.keymap.set('n', '<leader>gc', require('telescope.builtin').git_bcommits, { desc = '[git] branch [c]ommits' })
 vim.keymap.set('n', '<leader>gs', require('telescope.builtin').git_status, { desc = '[git] branch [c]ommits' })
 
-vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[s]earch [f]iles' })
+vim.keymap.set('n', '<leader>sf', 
+  function() 
+    require('telescope.builtin').find_files({no_ignore = true})
+  end, 
+  { desc = '[s]earch [f]iles' }
+)
+ 
+vim.keymap.set('n', '<leader>ff', 
+  function() 
+    require('telescope.builtin').find_files({no_ignore = true, hidden = true}) 
+  end, 
+  { desc = '[s]earch [f]iles' }
+)
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[s]earch [h]elp' })
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[s]earch current [w]ord' })
 --[[vim.keypam.set("v", '<leader>rc', function ()
