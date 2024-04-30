@@ -7,4 +7,5 @@ require("lukas.setup.telescope_setup")
 require("lukas.setup.treesitter_setup")
 require("telescope").load_extension('harpoon')
 require("lukas.setup.quickfix")
+require("lukas.setup.vim-easy-align_setup")
 --require("lukas.setup.verible_setup")`

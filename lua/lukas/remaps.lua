@@ -41,8 +41,9 @@ vim.keymap.set('n', '<leader>ga', require('telescope.builtin').git_commits, { de
 vim.keymap.set('n', '<leader>gb', require('telescope.builtin').git_branches, { desc = '[g]it [b]ranches' })
 vim.keymap.set('n', '<leader>gc', require('telescope.builtin').git_bcommits, { desc = '[git] branch [c]ommits' })
 vim.keymap.set('n', '<leader>gs', require('telescope.builtin').git_status, { desc = '[git] branch [c]ommits' })
+vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files)
 
-vim.keymap.set('n', '<leader>sf', 
+vim.keymap.set('n', '<leader>si', 
   function() 
     require('telescope.builtin').find_files({no_ignore = true})
   end, 

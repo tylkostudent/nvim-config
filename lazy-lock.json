@@ -34,6 +34,7 @@
   "tokyodark.nvim": { "branch": "master", "commit": "fa25db55c4ce361363a2dcd4ff20daab39a96e47" },
   "verilog-autoinst.nvim": { "branch": "main", "commit": "0d85aaf2b36c7d075329b37fb739a8355b63c9ab" },
   "vim-SystemVerilogUVM.vim": { "branch": "master", "commit": "b4190792af4cad5fee1f649b4fd3126a40d93900" },
+  "vim-easy-align": { "branch": "master", "commit": "9815a55dbcd817784458df7a18acacc6f82b1241" },
   "vim-easygrep": { "branch": "master", "commit": "d0c36a77cc63c22648e792796b1815b44164653a" },
   "vim-fugitive": { "branch": "master", "commit": "dac8e5c2d85926df92672bf2afb4fc48656d96c7" },
   "vim-indent-object": { "branch": "master", "commit": "8ab36d5ec2a3a60468437a95e142ce994df598c6" },

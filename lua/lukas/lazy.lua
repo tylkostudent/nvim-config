@@ -61,5 +61,6 @@ require('lazy').setup({
   require("lukas.plugins.obsidian"),
   require("lukas.plugins.markdown_preview"),
   require("lukas.plugins.quickfix"),
+  'junegunn/vim-easy-align',
 }, {})
 
