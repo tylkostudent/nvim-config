@@ -48,10 +48,8 @@ require('lazy').setup({
   require("lukas.plugins.verilog_module_instance"),
   'morganp/vim-SystemVerilogUVM.vim',
   require("lukas.plugins.tmux_vim"),
-  require("lukas.plugins.search_replace"),
   'nvim-lua/plenary.nvim', -- " don't forget to add this one if you don't have it yet!
   'ThePrimeagen/harpoon',
-  'dkprice/vim-easygrep',
   {
     'VonHeikemen/fine-cmdline.nvim',
     requires = {
@@ -62,5 +60,6 @@ require('lazy').setup({
   require("lukas.plugins.markdown_preview"),
   require("lukas.plugins.quickfix"),
   'junegunn/vim-easy-align',
+  'pest-parser/pest.vim',
 }, {})
 

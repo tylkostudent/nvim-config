@@ -2,7 +2,7 @@
 -- see `:help vim.o`
 -- note: you can change these options as you wish!
 
-vim.cmd("colorscheme modus-vivendi")
+vim.cmd("colorscheme rose-pine-main")
 
 -- set highlight on search
 vim.o.hlsearch = false
@@ -64,10 +64,11 @@ vim.opt.shiftwidth = 4 -- Number of spaces inserted when indenting
 -- vim: ts=2 sts=2 sw=2 et
 vim.cmd("set colorcolumn=100");
 vim.cmd("set relativenumber");
-vim.cmd("set cursorline")
 vim.cmd("set scrolloff=3")
+vim.cmd("set cursorline")
 vim.diagnostic.config({
 	severity_sort = true,
 	underline = {severity = vim.diagnostic.severity.ERROR},
 	virtual_text = {severity = vim.diagnostic.severity.ERROR},
 })
+vim.g.zig_fmt_autosave = 0

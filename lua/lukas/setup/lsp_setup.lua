@@ -42,6 +42,7 @@ local on_attach = function(_, bufnr)
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
     vim.lsp.buf.format()
   end, { desc = 'Format current buffer with LSP' })
+  require"lukas.custom_functions".disable_autoformat()
 end
 
 -- document existing key chains
@@ -59,7 +60,11 @@ require('which-key').register {
 -- before setting up the servers.
 require('mason').setup()
 require('mason-lspconfig').setup()
-
+require('mason-lspconfig').setup_handlers {
+    ['pest_ls'] = function ()
+        require('pest-vim').setup {}
+    end,
+}
 -- Enable the following language servers
 --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
 --
@@ -110,4 +115,3 @@ mason_lspconfig.setup_handlers {
     }
   end,
 }
-

@@ -11,5 +11,10 @@ Func.get_visual_selection = function()
     end
 end
 
+Func.disable_autoformat = function()
+  if vim.g.autoformat == 1 then 
+    vim.g.autoformat = 0; 
+  end
+end
 
 return Func
