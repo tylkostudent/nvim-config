@@ -60,11 +60,6 @@ require('which-key').register {
 -- before setting up the servers.
 require('mason').setup()
 require('mason-lspconfig').setup()
-require('mason-lspconfig').setup_handlers {
-    ['pest_ls'] = function ()
-        require('pest-vim').setup {}
-    end,
-}
 -- Enable the following language servers
 --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
 --
@@ -107,7 +102,6 @@ mason_lspconfig.setup {
 
 mason_lspconfig.setup_handlers {
   function(server_name)
-    print(server_name)
     require('lspconfig')[server_name].setup {
       capabilities = capabilities,
       on_attach = on_attach,
@@ -116,4 +110,3 @@ mason_lspconfig.setup_handlers {
     }
   end,
 }
-require 'lspconfig'.zls.setup{}
