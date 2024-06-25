@@ -59,6 +59,7 @@ require('lazy').setup({
   require("lukas.plugins.obsidian"),
   require("lukas.plugins.markdown_preview"),
   require("lukas.plugins.quickfix"),
+  require("lukas.plugins.ALE"),
   'junegunn/vim-easy-align',
   'nat-418/tcl.nvim',
 
