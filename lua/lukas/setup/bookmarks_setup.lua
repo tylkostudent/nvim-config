@@ -17,6 +17,7 @@ require('bookmarks').setup {
     map("n","<leader>bp",bm.bookmark_prev, {desc = "[b]ookmark [p]revious"}) -- jump to previous mark in local buffer
     map("n","<leader>bl",bm.bookmark_list, {desc = "[b]ookmark [l]ist"}) -- show marked file list in quickfix window
     map("n","<leader>bx",bm.bookmark_clear_all, {desc = "[b]ookmark clean all"}) -- removes all bookmarks
+    map("n","<leader>bf", "<cmd>:Telescope bookmarks list<CR>", {desc = "[b]ookmark [f]ind"}) -- removes all bookmarks
   end
 }
 require('telescope').load_extension('bookmarks')
