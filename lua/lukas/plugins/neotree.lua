@@ -7,4 +7,9 @@ return {
     "muniftanjim/nui.nvim",
     -- "3rd/image.nvim", -- optional image support in preview window: see `# preview mode` for more information
   },
+  opts = {
+      window = {
+         position = "right",
+      },
+   },
 }

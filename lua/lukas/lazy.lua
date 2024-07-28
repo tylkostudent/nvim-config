@@ -61,6 +61,6 @@ require('lazy').setup({
   require("lukas.plugins.quickfix"),
   'junegunn/vim-easy-align',
   'nat-418/tcl.nvim',
-
+  'ziglang/zig.vim',
 }, {})
 

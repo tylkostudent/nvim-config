@@ -65,6 +65,7 @@ end, {desc = "goto prev diagnostic"})
 
 vim.keymap.set('n', 'dio', 'di(')
 vim.keymap.set('n', 'Dio', '"_di(')
+vim.keymap.set('n', 'cio', 'ci(')
 vim.keymap.set('n', ':', '<cmd>FineCmdline<CR>', {noremap = true})
 --escaping terminal 
 vim.cmd([[

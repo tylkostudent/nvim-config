@@ -21,10 +21,10 @@ return {
       {
         name = "buf-parent",
         path = function()
-        return assert(vim.fs.dirname(vim.api.nvim_buf_get_name(0)))
+          return assert(vim.fs.dirname(vim.api.nvim_buf_get_name(0)))
         end,
       },
-    },
+    }
 
     -- see below for full list of options 👇
   },
