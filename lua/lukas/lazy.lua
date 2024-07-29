@@ -21,7 +21,6 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- note: first, some plugins that don't require any configuration
   -- git related plugins
-  'MunifTanjim/nui.nvim',
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
   -- detect tabstop and shiftwidth automatically
@@ -50,12 +49,6 @@ require('lazy').setup({
   require("lukas.plugins.tmux_vim"),
   'nvim-lua/plenary.nvim', -- " don't forget to add this one if you don't have it yet!
   'ThePrimeagen/harpoon',
-  {
-    'VonHeikemen/fine-cmdline.nvim',
-    requires = {
-      {'MunifTanjim/nui.nvim'}
-    },
-  },
   require("lukas.plugins.obsidian"),
   require("lukas.plugins.markdown_preview"),
   require("lukas.plugins.quickfix"),
