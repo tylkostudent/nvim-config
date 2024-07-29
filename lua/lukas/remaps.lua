@@ -5,8 +5,6 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
-vim.keymap.set('n', '<Leader>tt', '<cmd>:Neotree toggle=true<CR>', {desc = 'toggle Neotree'})
-vim.keymap.set('n', '<Leader>tf', '<cmd>:Neotree focus<CR>', {desc = 'focus on Neotree'})
 --split remaps
 --vim.keymap.set('n', 'ql', '<C-w>l', {desc = 'remap switching splits'})
 --vim.keymap.set('n', 'qk', '<C-w>k', {desc = 'remap switching splits'})

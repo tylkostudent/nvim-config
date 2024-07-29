@@ -21,6 +21,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- note: first, some plugins that don't require any configuration
   -- git related plugins
+  'MunifTanjim/nui.nvim',
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
   -- detect tabstop and shiftwidth automatically
@@ -31,7 +32,6 @@ require('lazy').setup({
   --  the configuration is done below. search for lspconfig to find it below.
   'michaeljsmith/vim-indent-object',
   require("lukas.plugins.lsp"),
-  require("lukas.plugins.neotree"),
   require("lukas.plugins.autocompletion"),
   require("lukas.plugins.git"),
   -- useful plugin to show you pending keybinds.
