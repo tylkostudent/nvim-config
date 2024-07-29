@@ -6,20 +6,21 @@ end-- configure treesitter
 treesitter.setup({
 -- enable syntax highlighting
 highlight = {
-enable = true,
+  enable = true,
+  disable = { "tex" }, -- list of language that will be disabled
 },
 -- enable indentation
 indent = { enable = true },
 -- ensure these language parsers are installed
 ensure_installed = {
-"lua",
-"vim",
-"verilog",
-"python",
-"rust",
-"go",
-"markdown",
-"markdown_inline",
+  "lua",
+  "vim",
+  "verilog",
+  "python",
+  "rust",
+  "go",
+  "markdown",
+  "markdown_inline",
 },
 -- auto install above language parsers
 auto_install = true,

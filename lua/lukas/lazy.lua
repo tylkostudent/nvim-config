@@ -60,6 +60,7 @@ require('lazy').setup({
   require("lukas.plugins.markdown_preview"),
   require("lukas.plugins.quickfix"),
   require("lukas.plugins.bookmarks"),
+  require("lukas.plugins.latex"),
   'junegunn/vim-easy-align',
   'nat-418/tcl.nvim',
   'ziglang/zig.vim',

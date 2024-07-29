@@ -17,9 +17,4 @@ Func.disable_autoformat = function()
   end
 end
 
-Func.set_svlangserver = function ()
-  local lsp = require("lspconfig")
-  
-end
-
 return Func
