@@ -109,4 +109,9 @@ mason_lspconfig.setup_handlers {
       filetypes = (servers[server_name] or {}).filetypes,
     }
   end,
+
+require("lukas.nom_mason_lsp")
+
+
+
 }
