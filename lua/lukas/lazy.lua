@@ -57,5 +57,6 @@ require('lazy').setup({
   'junegunn/vim-easy-align',
   'nat-418/tcl.nvim',
   'ziglang/zig.vim',
+  require("lukas.plugins.neotree"),
 }, {})
 
