@@ -98,4 +98,6 @@ vim.keymap.set('n', '[q', '<cmd>:cprevious<CR>')
 vim.keymap.set('n', '<leader>ln', '<cmd>:cnewer<CR>')
 vim.keymap.set('n', '<leader>lp', '<cmd>:colder<CR>')
 
+vim.keymap.set('n', 'tt', '<cmd>:Neotree position=right<CR>')
+
 --vim.keymap.set({'i', 'n'}, "<C-s>", require("telescope."))
