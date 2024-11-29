@@ -13,18 +13,20 @@ vim.keymap.set({'v'}, '-', '$')
 vim.keymap.set('o', '-', '$', {desc = 'remap end line in oprator mode to /"-/"'})
 vim.keymap.set('n', '<leader>o', 'o<esc>',{desc = 'make new line under without leaving normal mode'})
 vim.keymap.set('n', '<leader>O', 'O<esc>',{desc = 'make new line under without leaving normal mode'})
-vim.keymap.set('v', '<leader>sc', function ()
-  local text = require("lukas.custom_functions").get_visual_selection()
-  require('telescope.builtin').current_buffer_fuzzy_find({default_text = text})
-end
-, {desc = '[s]earch [c]urrent buffer'})
+vim.keymap.set(
+  'v', '<leader>sc', 
+  function ()
+    local text = require("lukas.custom_functions").get_visual_selection()
+    require('telescope.builtin').current_buffer_fuzzy_find({default_text = text})
+  end
+  , {desc = '[s]earch [c]urrent buffer'}
+)
 vim.keymap.set('v', '<leader>sa', function ()
   local text = require("lukas.custom_functions").get_visual_selection()
   require('telescope.builtin').live_grep({ default_text = text })
 end, {desc = '[s]earch [a]ll buffers'})
 vim.keymap.set({"n", "v"}, 'D', '"_d')
 vim.keymap.set({"n", "v"}, 'ds', 'dd')
-vim.keymap.set({"n", "v"}, 'Ds', '"_dd')
 vim.keymap.set('n', '<C-w>>', '<C-w>5>')
 
 vim.keymap.set('n', '<C-w><', '<C-w>5<')
@@ -63,9 +65,6 @@ vim.keymap.set('n', "[e", function()
   vim.diagnostic.goto_prev()
 end, {desc = "goto prev diagnostic"})
 
-vim.keymap.set('n', 'dio', 'di(')
-vim.keymap.set('n', 'Dio', '"_di(')
-vim.keymap.set('n', 'cio', 'ci(')
 --escaping terminal 
 vim.cmd([[
   :noremap <A-h> <C-\><C-N><C-w>h
@@ -89,7 +88,7 @@ vim.keymap.set("n", "<leader>lx", function()
     vim.diagnostic.config({
         virtual_text = isLspDiagnosticsVisible,
         underline = isLspDiagnosticsVisible
-    }) 
+    })
 end)
 vim.keymap.set('n', '<leader>lo', '<cmd>:copen<CR>')
 vim.keymap.set('n', '<leader>lc', '<cmd>:cclose<CR>')

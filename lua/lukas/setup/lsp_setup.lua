@@ -44,18 +44,18 @@ local on_attach = function(_, bufnr)
   end, { desc = 'Format current buffer with LSP' })
   require"lukas.custom_functions".disable_autoformat()
 end
+local wk = require("which-key")
 
--- document existing key chains
-require('which-key').register {
-  ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-  ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
-  ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
-  ['<leader>h'] = { name = 'More git', _ = 'which_key_ignore' },
-  ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-  ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-  ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
-}
-
+-- Add keybindings for different groups using the correct syntax
+wk.add({
+  {"<leader>c", group = "[C]ode"},
+  {"<leader>d", group = "[D]ocument"},
+  {"<leader>g", group = "[G]it"},
+  {"<leader>h", group = "More git"},
+  {"<leader>r", group = "[R]ename"},
+  {"<leader>s", group = "[S]earch"},
+  {"<leader>w", group = "[W]orkspace"},
+})
 -- mason-lspconfig requires that these setup functions are called in this order
 -- before setting up the servers.
 require('mason').setup()
