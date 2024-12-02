@@ -100,5 +100,7 @@ vim.keymap.set('n', '<leader>lp', '<cmd>:colder<CR>')
 vim.keymap.set('n', '<leader>tt', '<cmd>:Neotree toggle position=right<CR>')
 vim.keymap.set('n', '<leader>tf', '<cmd>:Neotree focus<CR>')
 vim.keymap.set('n', '<leader>tc', '<cmd>:Neotree close<CR>')
-
 --vim.keymap.set({'i', 'n'}, "<C-s>", require("telescope."))
+--
+vim.keymap.set('n', '<leader>rw', ":%s/\\<<c-r>=expand(\"<cword>\")<cr>\\>/", {desc = "[r]eplace [w]ord under cursor"})
+vim.keymap.set('n', '<leader>rW', ":%s/\\<<c-r>=expand(\"<cWORD>\")<cr>\\>/", {desc = "[r]eplace [W]ORD under cursor"})
