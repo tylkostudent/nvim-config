@@ -59,6 +59,6 @@ require('lazy').setup({
   'ziglang/zig.vim',
   require("lukas.plugins.neotree"),
   'echasnovski/mini.icons',
-
+  "sindrets/diffview.nvim",
 }, {})
 
