@@ -60,5 +60,6 @@ require('lazy').setup({
   require("lukas.plugins.neotree"),
   'echasnovski/mini.icons',
   "sindrets/diffview.nvim",
+  'ThePrimeagen/git-worktree.nvim',
 }, {})
 

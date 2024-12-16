@@ -104,3 +104,14 @@ vim.keymap.set('n', '<leader>tc', '<cmd>:Neotree close<CR>')
 --
 vim.keymap.set('n', '<leader>rw', ":%s/\\<<c-r>=expand(\"<cword>\")<cr>\\>/", {desc = "[r]eplace [w]ord under cursor"})
 vim.keymap.set('n', '<leader>rW', ":%s/\\<<c-r>=expand(\"<cWORD>\")<cr>\\>/", {desc = "[r]eplace [W]ORD under cursor"})
+
+vim.keymap.set(
+  'n', "<leader>gw", ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>",
+  {desc = "[g]it [w]orktrees list"}
+)
+
+vim.keymap.set(
+  'n', "<leader>gW", ":lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>",
+  {desc = "[g]it [W]orktree create"}
+)
+
