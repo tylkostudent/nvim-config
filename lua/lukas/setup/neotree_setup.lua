@@ -42,6 +42,7 @@ require("neo-tree").setup {
     end,
   },
   window = {
+    position = "right",
     mappings = {
       Y = "copy_selector",
     },

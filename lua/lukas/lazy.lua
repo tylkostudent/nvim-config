@@ -61,5 +61,6 @@ require('lazy').setup({
   'echasnovski/mini.icons',
   "sindrets/diffview.nvim",
   'ThePrimeagen/git-worktree.nvim',
+  'junegunn/fzf',
 }, {})
 
