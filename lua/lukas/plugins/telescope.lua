@@ -3,6 +3,7 @@ return {
     branch = '0.1.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
+      "nvim-telescope/telescope-live-grep-args.nvim",
       -- fuzzy finder algorithm which requires local dependencies to be built.
       -- only load if `make` is available. make sure you have the system
       -- requirements installed.

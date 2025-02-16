@@ -61,7 +61,7 @@ vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { de
   local cmd = ":%s/"+text+"//gc"
   vim.cmd(cmd)
 end, {desc = '[r]eplace selection in [c]urrent buffer'})]]
-vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[s]earch by [g]rep' })
+vim.keymap.set('n', '<leader>sg', require('telescope').extensions.live_grep_args.live_grep_args, { desc = '[s]earch by [g]rep' })
 vim.keymap.set('n', '<leader>sG', ':LiveGrepGitRoot<cr>', { desc = '[s]earch by [g]rep on git root' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[s]earch [d]iagnostics' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[s]earch [r]esume' })
