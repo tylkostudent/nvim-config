@@ -61,7 +61,7 @@ vim.opt.tabstop = 4 -- A TAB character looks like 4 spaces
 vim.opt.shiftwidth = 4 -- Number of spaces inserted when indenting
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
-vim.cmd("set colorcolumn=100");
+vim.cmd("set colorcolumn=80");
 vim.cmd("set relativenumber");
 vim.cmd("set scrolloff=3")
 vim.cmd("set cursorline")
