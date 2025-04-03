@@ -36,7 +36,6 @@ require('lazy').setup({
   -- useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },
   require("lukas.plugins.color_scheme"),
-  require("lukas.plugins.indent"),
   require("lukas.plugins.lualine"),
   -- "gc" to comment visual regions/lines
   { 'numtostr/comment.nvim', opts = {} },
@@ -45,22 +44,15 @@ require('lazy').setup({
   require("lukas.plugins.treesitter"),
   --"InES-HPMM/zhaw-snippets",
   require("lukas.plugins.verilog_module_instance"),
-  'morganp/vim-SystemVerilogUVM.vim',
   require("lukas.plugins.tmux_vim"),
   'nvim-lua/plenary.nvim', -- " don't forget to add this one if you don't have it yet!
   'ThePrimeagen/harpoon',
-  require("lukas.plugins.obsidian"),
-  require("lukas.plugins.markdown_preview"),
   require("lukas.plugins.quickfix"),
-  require("lukas.plugins.bookmarks"),
   require("lukas.plugins.latex"),
   'junegunn/vim-easy-align',
-  'nat-418/tcl.nvim',
-  'ziglang/zig.vim',
   require("lukas.plugins.neotree"),
   'echasnovski/mini.icons',
   "sindrets/diffview.nvim",
-  'ThePrimeagen/git-worktree.nvim',
   'junegunn/fzf',
 }, {})
 

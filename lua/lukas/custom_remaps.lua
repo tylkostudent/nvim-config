@@ -3,9 +3,6 @@ vim.keymap.set('n', '<leader>vs', '<cmd>:vs<CR>')
 
 vim.keymap.set('n', '<leader>ex', '<cmd>:Ex<CR>')
 
-vim.keymap.set('i', "<A-]>", "<esc>")
-vim.keymap.set('i', "<A-[>", "<esc>")
-
 --vim.keymap.set('n', 'q+', '<C-w>+')
 --vim.keymap.set('n', 'q-', '<C-w>-')
 vim.keymap.set({'n'}, '-', '$')
