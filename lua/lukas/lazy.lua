@@ -54,5 +54,7 @@ require('lazy').setup({
   'echasnovski/mini.icons',
   "sindrets/diffview.nvim",
   'junegunn/fzf',
+
+  'jdhao/better-escape.vim',
 }, {})
 
