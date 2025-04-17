@@ -120,3 +120,4 @@ vim.keymap.set(
   {desc = ""}
 )
 
+vim.keymap.set("n", "<leader>fq", require"telescope.builtin".quickfix, {desc = "fuzzy fing throught current quickfix list"})
