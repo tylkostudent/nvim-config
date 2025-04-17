@@ -1,6 +1,7 @@
 local actions = require("telescope.actions")
 require('telescope').setup { 
     defaults = {
+      file_ignore_patterns = {"%.gd.uid"},
       mappings = {
         n = {
           ['<C-s>'] = actions.send_selected_to_qflist + actions.open_qflist,

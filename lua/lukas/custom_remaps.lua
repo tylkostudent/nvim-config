@@ -112,4 +112,11 @@ vim.keymap.set(
   {desc = "[g]it [W]orktree create"}
 )
 
+-- Fuzzy find godot scripts
+vim.keymap.set(
+  'n', "<leader>fs", function() 
+	  require("telescope.builtin").find_files{search_file = "*.gd"}
+  end, 
+  {desc = ""}
+)
 
