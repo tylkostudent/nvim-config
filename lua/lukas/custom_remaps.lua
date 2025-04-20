@@ -122,5 +122,5 @@ vim.keymap.set(
 
 vim.keymap.set("n", "<leader>fq", require"telescope.builtin".quickfix, {desc = "fuzzy find throught current quickfix list"})
 
-vim.keymap.set("n", "<leader>]t", "<cmd>:tabNext<CR>", {desc = "go to next tab"})
-vim.keymap.set("n", "<leader>[t", "<cmd>:tabprevious<CR>", {desc = "go to previous tab"})
+vim.keymap.set("n", "]t", "<cmd>:tabNext<CR>", {desc = "go to next tab"})
+vim.keymap.set("n", "[t", "<cmd>:tabprevious<CR>", {desc = "go to previous tab"})
