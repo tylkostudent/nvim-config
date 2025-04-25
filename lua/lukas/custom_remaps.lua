@@ -40,7 +40,7 @@ vim.keymap.set('n', '<leader>a{', 'ciw{}<ESC>hp')
 vim.keymap.set('n', '<leader>a}', 'ciw{}<ESC>hp')
 
 --golang err
-vim.keymap.set("n", "<leader>pe", "oif(err != nil){\n\n}<ESC>ki")
+vim.keymap.set("n", "<leader>pe", "oif err != nil {\n}<ESC>ko" ,{desc = "paste line below golang if err!=nil{}"})
 --init module system verilog
 vim.keymap.set("n", "<leader>pm", "omodule#(\n\n)(\n\n);\nendmodule<ESC>kkkkkFea")
 vim.keymap.set({"i"}, "<C-b>", "begin\n\nend<ESC>ki")
