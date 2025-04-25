@@ -124,3 +124,6 @@ vim.keymap.set("n", "<leader>fq", require"telescope.builtin".quickfix, {desc = "
 
 vim.keymap.set("n", "]t", "<cmd>:tabNext<CR>", {desc = "go to next tab"})
 vim.keymap.set("n", "[t", "<cmd>:tabprevious<CR>", {desc = "go to previous tab"})
+
+--floating terminal
+vim.keymap.set("n", "<leader>ft", "<cmd>:Floaterminal<CR>", {desc = "tobble persistent floating termianal"})
