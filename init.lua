@@ -3,6 +3,7 @@ require("lukas.lazy")
 require("lukas.setup")
 require("lukas.options")
 require("lukas.remaps")
+require("lukas.my_plugins.flaterminal")
 require("lukas.additional_setup")
 vim.cmd([[:TSEnable highlight<CR>]])
 vim.diagnostic.config({
