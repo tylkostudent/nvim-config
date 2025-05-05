@@ -48,13 +48,10 @@ require('lazy').setup({
   'nvim-lua/plenary.nvim', -- " don't forget to add this one if you don't have it yet!
   'ThePrimeagen/harpoon',
   require("lukas.plugins.quickfix"),
-  require("lukas.plugins.latex"),
   'junegunn/vim-easy-align',
   require("lukas.plugins.neotree"),
   'echasnovski/mini.icons',
-  "sindrets/diffview.nvim",
   'junegunn/fzf',
-
   'jdhao/better-escape.vim',
 }, {})
 
