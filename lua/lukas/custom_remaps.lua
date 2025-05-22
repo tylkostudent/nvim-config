@@ -131,3 +131,5 @@ vim.keymap.set("n", "<leader>ft", "<cmd>:Floaterminal<CR>", {desc = "tobble pers
 vim.keymap.set("i", "\"", "\"\"<left>")
 vim.keymap.set("i", "(", "()<left>")
 vim.keymap.set("i", "{", "{}<left>")
+
+vim.keymap.set("n", "<leader>tw", "<cmd>:Telescope workspaces<CR>")

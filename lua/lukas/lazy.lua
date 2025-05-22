@@ -53,5 +53,6 @@ require('lazy').setup({
   'echasnovski/mini.icons',
   'junegunn/fzf',
   'jdhao/better-escape.vim',
+  "natecraddock/workspaces.nvim",
 }, {})
 

@@ -10,7 +10,7 @@ require("lukas.setup.quickfix")
 require("lukas.setup.vim-easy-align_setup")
 require("lukas.setup.lualine_setup")
 require("lukas.setup.neotree_setup")
-
+require("lukas.setup.workspaces")
 
 require("telescope").load_extension('harpoon')
 --require("lukas.setup.verible_setup")`
