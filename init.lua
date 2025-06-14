@@ -1,6 +1,5 @@
 vim.g.mapleader = ' '
 require("lukas.lazy")
-require("lukas.setup")
 require("lukas.options")
 require("lukas.remaps")
 require("lukas.my_plugins.flaterminal")
@@ -12,3 +11,4 @@ vim.diagnostic.config({
 	virtual_text = {severity = vim.diagnostic.severity.ERROR},
 })
 require("lukas.autocommands")
+require("lukas.setup")
