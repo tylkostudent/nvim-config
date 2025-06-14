@@ -5,4 +5,12 @@ require("rose-pine").setup({
     transparency = false,
   }
 })
-vim.cmd("colorscheme rose-pine")
+require("kanagawa").setup({
+  styles = {
+    italic = false,
+    bold = true,
+    transparency = false,
+  }
+})
+vim.cmd("colorscheme nightfly")
+vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
