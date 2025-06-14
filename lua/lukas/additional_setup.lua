@@ -5,17 +5,5 @@ require("rose-pine").setup({
     transparency = false,
   }
 })
-require("kanagawa").setup({
-  styles = {
-    italic = false,
-    bold = true,
-    transparency = false,
-  }
-})
-require("nightfox").setup({
-  options = {
-    transparent = true,
-  }
-})
-vim.cmd("colorscheme duskfox")
+vim.cmd("colorscheme rose-pine")
 vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
