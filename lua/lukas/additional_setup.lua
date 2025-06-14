@@ -12,5 +12,10 @@ require("kanagawa").setup({
     transparency = false,
   }
 })
-vim.cmd("colorscheme nightfly")
+require("nightfox").setup({
+  options = {
+    transparent = true,
+  }
+})
+vim.cmd("colorscheme duskfox")
 vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
