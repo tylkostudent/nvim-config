@@ -25,6 +25,9 @@ require('lazy').setup({
   'nvim-lua/plenary.nvim', -- " don't forget to add this one if you don't have it yet!
   'tpope/vim-sleuth',
   'junegunn/fzf',
+  "nvim-lua/plenary.nvim",
+  'NMAC427/guess-indent.nvim',
+  require("lukas.plugins.harpoon"),
   require("lukas.plugins.neotree"),
   require("lukas.plugins.treesitter"),
   require("lukas.plugins.lsp_config"),
