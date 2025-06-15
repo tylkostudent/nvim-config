@@ -19,40 +19,15 @@ vim.opt.rtp:prepend(lazypath)
 --  you can also configure plugins after the setup call,
 --    as they will be available in your neovim runtime.
 require('lazy').setup({
-  -- note: first, some plugins that don't require any configuration
-  -- git related plugins
-  'tpope/vim-fugitive',
-  'tpope/vim-rhubarb',
-  -- detect tabstop and shiftwidth automatically
-  'tpope/vim-sleuth',
-  --rust
-  'simrat39/rust-tools.nvim',
-  -- note: this is where your plugins related to lsp can be installed.
-  --  the configuration is done below. search for lspconfig to find it below.
-  'michaeljsmith/vim-indent-object',
-  require("lukas.plugins.lsp"),
-  require("lukas.plugins.autocompletion"),
-  require("lukas.plugins.git"),
-  -- useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
-  require("lukas.plugins.color_scheme"),
-  require("lukas.plugins.lualine"),
-  -- "gc" to comment visual regions/lines
-  { 'numtostr/comment.nvim', opts = {} },
   require("lukas.plugins.telescope"),
-  -- fuzzy finder (files, lsp, etc)
-  require("lukas.plugins.treesitter"),
-  --"InES-HPMM/zhaw-snippets",
-  require("lukas.plugins.verilog_module_instance"),
-  require("lukas.plugins.tmux_vim"),
-  'nvim-lua/plenary.nvim', -- " don't forget to add this one if you don't have it yet!
-  'ThePrimeagen/harpoon',
-  require("lukas.plugins.quickfix"),
-  'junegunn/vim-easy-align',
-  require("lukas.plugins.neotree"),
-  'echasnovski/mini.icons',
-  'junegunn/fzf',
+  require("lukas.plugins.colorscheme"),
   'jdhao/better-escape.vim',
-  "natecraddock/workspaces.nvim",
-}, {})
-
+  'nvim-lua/plenary.nvim', -- " don't forget to add this one if you don't have it yet!
+  'tpope/vim-sleuth',
+  require("lukas.plugins.neotree"),
+  require("lukas.plugins.treesitter"),
+  require("lukas.plugins.lsp_config"),
+  require("lukas.plugins.autocomplete"),
+  require("lukas.plugins.lualine"),
+  require("lukas.plugins.autopairs"),
+})

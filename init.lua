@@ -1,14 +1,7 @@
 vim.g.mapleader = ' '
-require("lukas.lazy")
 require("lukas.options")
 require("lukas.remaps")
-require("lukas.my_plugins.flaterminal")
-require("lukas.additional_setup")
-vim.cmd([[:TSEnable highlight<CR>]])
-vim.diagnostic.config({
-	severity_sort = true,
-	underline = {severity = vim.diagnostic.severity.ERROR},
-	virtual_text = {severity = vim.diagnostic.severity.ERROR},
-})
-require("lukas.autocommands")
-require("lukas.setup")
+require("lukas.lazy")
+require("lukas.plugin_remaps")
+require("lukas.floaterminal")
+

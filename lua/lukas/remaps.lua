@@ -1,79 +1,117 @@
-vim.g.maplocalleader = ' '
-vim.g.mapleader = ' '
---shift insert remaps
-vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
--- Remap for dealing with word wrap
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
---split remaps
---vim.keymap.set('n', 'ql', '<C-w>l', {desc = 'remap switching splits'})
---vim.keymap.set('n', 'qk', '<C-w>k', {desc = 'remap switching splits'})
---vim.keymap.set('n', 'qj', '<C-w>j', {desc = 'remap switching splits'})
---vim.keymap.set('n', 'qh', '<C-w>h', {desc = 'remap switching splits'})
---lua snip
-local luasnip = require("luasnip")
-vim.keymap.set("i", "<C-k>", function() luasnip.expand() end, {silent = true} )
-vim.keymap.set({"i", "s"}, "<C-l>", function() luasnip.jump( 1) end, {silent = true})
-vim.keymap.set({"i", "s"}, "<C-j>", function() luasnip.jump(-1) end, {silent = true})
-vim.keymap.set({"i", "s"}, "<C-e>", function()
-  if luasnip.choice_active() then
-    luasnip.change_choice(1)
-  end
-end, {silent = true})
+vim.keymap.set("n", "<leader>ex", "<cmd>:Ex<CR>")
+vim.keymap.set('n', '<leader>hs', '<cmd>:split<CR>')
+vim.keymap.set('n', '<leader>vs', '<cmd>:vs<CR>')
 
+vim.keymap.set('n', '<leader>ex', '<cmd>:Ex<CR>')
 
+--vim.keymap.set('n', 'q+', '<C-w>+')
+--vim.keymap.set('n', 'q-', '<C-w>-')
+vim.keymap.set({'n'}, '-', '$')
+vim.keymap.set({'v'}, '-', '$')
+vim.keymap.set('o', '-', '$', {desc = 'remap end line in oprator mode to /"-/"'})
+vim.keymap.set('n', '<leader>o', 'o<esc>',{desc = 'make new line under without leaving normal mode'})
+vim.keymap.set('n', '<leader>O', 'O<esc>',{desc = 'make new line under without leaving normal mode'})
+vim.keymap.set({"n", "v"}, 'D', '"_d')
+vim.keymap.set({"n", "v"}, 'ds', 'dd')
+vim.keymap.set('n', '<C-w>>', '<C-w>5>')
 
-vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] find recently opened files' })
-vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] find existing buffers' })
-vim.keymap.set('n', '<leader>/', function()
-  -- you can pass additional configuration to telescope to change theme, layout, etc.
-  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-    winblend = 10,
-    previewer = false,
-  })
-end, { desc = '[/] fuzzily search in current buffer' })
+vim.keymap.set('n', '<C-w><', '<C-w>5<')
+vim.keymap.set('n', '<C-w>-', '<C-w>5-')
+vim.keymap.set('n', '<C-w>+', '<C-w>5+')
 
-vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'search [g]it [f]iles' })
+vim.keymap.set('n', '<leader>a\'', 'ciw\'\'<ESC>hpl')
+vim.keymap.set('n', '<leader>a\"', 'ciw\"\"<ESC>hpl')
+vim.keymap.set('n', '<leader>a(', 'ciw()<ESC>hpl')
+vim.keymap.set('n', '<leader>a)', 'ciw()<ESC>hpl')
+vim.keymap.set('n', '<leader>a[', 'ciw[]<ESC>hpl')
+vim.keymap.set('n', '<leader>a]', 'ciw[]<ESC>hpl')
+vim.keymap.set('n', '<leader>a{', 'ciw{}<ESC>hpl')
+vim.keymap.set('n', '<leader>a}', 'ciw{}<ESC>hpl')
 
-vim.keymap.set('n', '<leader>ga', require('telescope.builtin').git_commits, { desc = '[g]it [a]ll commits' })
-vim.keymap.set('n', '<leader>gb', require('telescope.builtin').git_branches, { desc = '[g]it [b]ranches' })
-vim.keymap.set('n', '<leader>gc', require('telescope.builtin').git_bcommits, { desc = '[git] branch [c]ommits' })
-vim.keymap.set('n', '<leader>gs', require('telescope.builtin').git_status, { desc = '[git] branch [c]ommits' })
-vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files)
+--golang err
+vim.keymap.set("n", "<leader>pe", "oif err != nil {\n}<ESC>ko" ,{desc = "paste line below golang if err!=nil{}"})
+--init module system verilog
+vim.keymap.set("n", "<leader>pm", "omodule#(\n\n)(\n\n);\nendmodule<ESC>kkkkkFea")
+vim.keymap.set({"i"}, "<C-b>", "begin\n\nend<ESC>ki")
 
-vim.keymap.set('n', '<leader>si', 
-  function() 
-    require('telescope.builtin').find_files({no_ignore = true})
-  end, 
-  { desc = '[s]earch [f]iles' }
+vim.keymap.set('v', '<leader>a\'', 'c\'\'<ESC>hp')
+vim.keymap.set('v', '<leader>a\"', 'c\"\"<ESC>hp')
+vim.keymap.set('v', '<leader>a(', 'c()<ESC>hp')
+vim.keymap.set('v', '<leader>a)', 'c()<ESC>hp')
+vim.keymap.set('v', '<leader>a[', 'c[]<ESC>hp')
+vim.keymap.set('v', '<leader>a]', 'c[]<ESC>hp')
+vim.keymap.set('v', '<leader>a{', 'c{}<ESC>hp')
+vim.keymap.set('v', '<leader>a}', 'c{}<ESC>hp')
+
+--"to surround" 
+vim.keymap.set('n', "]e", function()
+  vim.diagnostic.goto_next()
+end, {desc = "goto prev diagnostic"})
+vim.keymap.set('n', "[e", function()
+  vim.diagnostic.goto_prev()
+end, {desc = "goto prev diagnostic"})
+
+--escaping terminal 
+vim.cmd([[
+  :noremap <A-h> <C-\><C-N><C-w>h
+  :noremap <A-j> <C-\><C-N><C-w>j
+  :noremap <A-k> <C-\><C-N><C-w>k
+  :noremap <A-l> <C-\><C-N><C-w>l
+  :noremap <A-h> <C-\><C-N><C-w>h
+  :noremap <A-j> <C-\><C-N><C-w>j
+  :noremap <A-k> <C-\><C-N><C-w>k
+  :noremap <A-l> <C-\><C-N><C-w>l
+  :nnoremap <A-h> <C-w>h
+  :nnoremap <A-j> <C-w>j
+  :nnoremap <A-k> <C-w>k
+  :nnoremap <A-l> <C-w>l
+]])
+-- Disable ESLint LSP server and hide virtual text in Neovim
+-- Add this to your init.lua or init.vim file
+local isLspDiagnosticsVisible = true
+vim.keymap.set("n", "<leader>lx", function()
+    isLspDiagnosticsVisible = not isLspDiagnosticsVisible
+    vim.diagnostic.config({
+        virtual_text = isLspDiagnosticsVisible,
+        underline = isLspDiagnosticsVisible
+    })
+end)
+vim.keymap.set('n', '<leader>lo', '<cmd>:copen<CR>')
+vim.keymap.set('n', '<leader>lc', '<cmd>:cclose<CR>')
+vim.keymap.set('n', ']q', '<cmd>:cnext<CR>')
+vim.keymap.set('n', '[q', '<cmd>:cprevious<CR>')
+vim.keymap.set('n', '<leader>ln', '<cmd>:cnewer<CR>')
+vim.keymap.set('n', '<leader>lp', '<cmd>:colder<CR>')
+
+vim.keymap.set('n', '<leader>tt', '<cmd>:Neotree toggle position=right<CR>')
+vim.keymap.set('n', '<leader>tf', '<cmd>:Neotree focus<CR>')
+vim.keymap.set('n', '<leader>tc', '<cmd>:Neotree close<CR>')
+--vim.keymap.set({'i', 'n'}, "<C-s>", require("telescope."))
+--
+vim.keymap.set('n', '<leader>rw', ":%s/\\<<c-r>=expand(\"<cword>\")<cr>\\>/", {desc = "[r]eplace [w]ord under cursor"})
+vim.keymap.set('n', '<leader>rW', ":%s/\\<<c-r>=expand(\"<cWORD>\")<cr>\\>/", {desc = "[r]eplace [W]ORD under cursor"})
+
+vim.keymap.set(
+  'n', "<leader>gw", ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>",
+  {desc = "[g]it [w]orktrees list"}
 )
- 
-vim.keymap.set('n', '<leader>ff', 
-  function() 
-    require('telescope.builtin').find_files({no_ignore = true, hidden = true}) 
-  end, 
-  { desc = '[s]earch [f]iles' }
-)
-vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[s]earch [h]elp' })
-vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[s]earch current [w]ord' })
---[[vim.keypam.set("v", '<leader>rc', function ()
-  local text = require("lukas.custom_functions").get_visual_selection()
-  local cmd = ":%s/"+text+"//gc"
-  vim.cmd(cmd)
-end, {desc = '[r]eplace selection in [c]urrent buffer'})]]
-vim.keymap.set('n', '<leader>sg', require('telescope').extensions.live_grep_args.live_grep_args, { desc = '[s]earch by [g]rep' })
-vim.keymap.set('n', '<leader>sG', ':LiveGrepGitRoot<cr>', { desc = '[s]earch by [g]rep on git root' })
-vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[s]earch [d]iagnostics' })
-vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[s]earch [r]esume' })
 
-vim.keymap.set("n", "ma" ,"<cmd>lua require(\"harpoon.mark\").add_file()<CR>" ,{ desc = 'harpoon mark file' })
-vim.keymap.set("n", "mn" ,"<cmd>lua require(\"harpoon.ui\").nav_next()<CR>" ,{ desc = 'harpoon mark file' })
-vim.keymap.set("n", "mp" ,"<cmd>lua require(\"harpoon.ui\").nav_prev()<CR>" ,{ desc = 'harpoon mark file' })
-vim.keymap.set("n", "mo" ,"<cmd>lua require(\"harpoon.ui\").toggle_quick_menu()<CR>" ,{ desc = 'harpoon mark file' })
-vim.keymap.set("n", "mr" ,"<cmd>lua require(\"harpoon.mark\").rm_file()<CR>" ,{ desc = 'harpoon mark file' })
-vim.keymap.set("n", "mc" ,"<cmd>lua require(\"harpoon.mark\").clear_all()<CR>" ,{ desc = 'harpoon mark file' })
-require("lukas.custom_remaps")
--- [[ configure treesitter ]]
--- see `:help nvim-treesitter`
--- defer treesitter setup after first render to improve startup time of 'nvim {filename}'
+vim.keymap.set(
+  'n', "<leader>gW", ":lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>",
+  {desc = "[g]it [W]orktree create"}
+)
+
+
+
+vim.keymap.set("n", "]t", "<cmd>:tabNext<CR>", {desc = "go to next tab"})
+vim.keymap.set("n", "[t", "<cmd>:tabprevious<CR>", {desc = "go to previous tab"})
+
+--floating terminal
+vim.keymap.set("n", "<leader>ft", "<cmd>:Floaterminal<CR>", {desc = "tobble persistent floating termianal"})
+--
+-- vim.keymap.set("i", "\"", "\"\"<left>")
+-- vim.keymap.set("i", "(", "()<left>")
+-- vim.keymap.set("i", "{", "{}<left>")
+
+vim.keymap.set("n", "<leader>tw", "<cmd>:Telescope workspaces<CR>")
 
