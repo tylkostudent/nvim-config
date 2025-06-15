@@ -24,13 +24,6 @@ vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, {desc = '[G]oto [D]eclaration
 vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, {desc = '[W]orkspace [A]dd Folder'})
 vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, {desc = '[W]orkspace [R]emove Folder'})
 
-vim.keymap.set('n', '<leader>sgd', function()
-  require('telescope.builtin').find_files({
-    find_command = { 'find', '.', '-type', 'f', '-name', '*.gd' }
-  })
-end, { desc = '[s]earch [.gd] files only' })
---my remaps that require plugins 
-
 vim.keymap.set(
   'v', '<leader>sc', 
   function ()
@@ -59,3 +52,6 @@ vim.keymap.set("n", "<leader>ms", require("harpoon.ui").toggle_quick_menu, {desc
 vim.keymap.set("n", "<leader>sm", "<cmd>Telescope harpoon marks<CR>", {desc= "[s]how [m]arked files by harpoon"})
 vim.keymap.set("n", "<leader>mn", require("harpoon.ui").nav_next, {desc= "[h]arpoon [n]ext file"})
 vim.keymap.set("n", "<leader>mp", require("harpoon.ui").nav_prev, {desc= "[h]arpoon [p]rev file"})
+
+--serch extension mine code but requires telescope
+vim.keymap.set("n", "<leader>se", require("lukas.search_ext").prompt_for_extension, {desc = "[s]each files with [e]xtension"})

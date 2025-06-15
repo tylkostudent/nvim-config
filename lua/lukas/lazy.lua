@@ -27,6 +27,7 @@ require('lazy').setup({
   'junegunn/fzf',
   "nvim-lua/plenary.nvim",
   'NMAC427/guess-indent.nvim',
+  "junegunn/vim-easy-align",
   require("lukas.plugins.harpoon"),
   require("lukas.plugins.neotree"),
   require("lukas.plugins.treesitter"),
@@ -36,4 +37,7 @@ require('lazy').setup({
   require("lukas.plugins.autopairs"),
   require("lukas.plugins.better_quickfix"),
   require("lukas.plugins.which_key"),
+  require("lukas.plugins.tmux"),
+  require("lukas.plugins.verilog_auto_inst"),
+  require("lukas.plugins.lazydev"),
 })
