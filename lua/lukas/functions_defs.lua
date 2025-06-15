@@ -45,7 +45,7 @@ Func.search_ext = function(ext)
         scan_dir(full_path)
       elseif type == "file" and name:match("%." .. ext .. "$") then
         local rel_path = full_path:sub(#cwd + 2) -- remove cwd + '/'
-        table.insert(files, { rel = rel_path, full = full_path })
+        table.insert(files, rel_path)
       end
     end
   end
@@ -59,6 +59,7 @@ Func.search_ext = function(ext)
   return files
 end
 
+
 Func.search_ext_with_telescope = function(ext)
   local files = Func.search_ext(ext)
   if #files == 0 then return end
@@ -67,26 +68,18 @@ Func.search_ext_with_telescope = function(ext)
     prompt_title = "Files with ." .. ext .. " extension",
     finder = finders.new_table({
       results = files,
-      entry_maker = function(entry)
-        return {
-          value = entry,
-          display = entry.rel,
-          ordinal = entry.rel,
-        }
-      end,
     }),
     sorter = conf.generic_sorter({}),
     attach_mappings = function(prompt_bufnr)
       actions.select_default:replace(function()
         actions.close(prompt_bufnr)
         local selection = action_state.get_selected_entry()
-        vim.cmd("edit " .. vim.fn.fnameescape(selection.value.full))
+        vim.cmd("edit " .. vim.fn.fnameescape(selection[1]))
       end)
       return true
     end,
   }):find()
 end
-
 
 
 return Func
