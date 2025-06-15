@@ -24,10 +24,13 @@ require('lazy').setup({
   'jdhao/better-escape.vim',
   'nvim-lua/plenary.nvim', -- " don't forget to add this one if you don't have it yet!
   'tpope/vim-sleuth',
+  'junegunn/fzf',
   require("lukas.plugins.neotree"),
   require("lukas.plugins.treesitter"),
   require("lukas.plugins.lsp_config"),
   require("lukas.plugins.autocomplete"),
   require("lukas.plugins.lualine"),
   require("lukas.plugins.autopairs"),
+  require("lukas.plugins.better_quickfix"),
+  require("lukas.plugins.which_key"),
 })

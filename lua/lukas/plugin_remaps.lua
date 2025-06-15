@@ -2,6 +2,7 @@
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = 'Telescope [s]earch [f]iles' })
+vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = 'Telescope [s]earch [f]iles' })
 vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = 'Telescope [s]earch [g]rep' })
 vim.keymap.set('n', '<leader>sb', builtin.buffers, { desc = 'Telescope [s]earch [b]buffers' })
 vim.keymap.set('n', '<leader>ht', builtin.help_tags, { desc = 'Telescope [H]elp [T]ags' })
@@ -23,6 +24,11 @@ vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, {desc = '[G]oto [D]eclaration
 vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, {desc = '[W]orkspace [A]dd Folder'})
 vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, {desc = '[W]orkspace [R]emove Folder'})
 
+vim.keymap.set('n', '<leader>sgd', function()
+  require('telescope.builtin').find_files({
+    find_command = { 'find', '.', '-type', 'f', '-name', '*.gd' }
+  })
+end, { desc = '[s]earch [.gd] files only' })
 --my remaps that require plugins 
 
 vim.keymap.set(
