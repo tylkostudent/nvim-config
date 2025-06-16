@@ -1,7 +1,6 @@
 return {
   {
     "hrsh7th/cmp-nvim-lsp",
-    'hrsh7th/cmp-buffer',
   },
   {
     "L3MON4D3/LuaSnip",
@@ -41,9 +40,10 @@ return {
           ['<C-a>'] = cmp.mapping.abort(),
         },
         sources = {
-          { name = 'nvim_lsp' },
-          { name = 'luasnip' },
-          { name = 'path'},
+          { name = 'nvim_lsp', dup = 0},
+          { name = 'luasnip', },
+          { name = 'path', },
+          { name = "buffer"},
         },
       })
     end
