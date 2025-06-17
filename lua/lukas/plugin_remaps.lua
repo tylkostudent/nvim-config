@@ -56,5 +56,8 @@ vim.keymap.set("n", "<leader>sm", "<cmd>Telescope harpoon marks<CR>", {desc= "[s
 vim.keymap.set("n", "mn", require("harpoon.ui").nav_next, {desc= "[h]arpoon [n]ext file"})
 vim.keymap.set("n", "mp", require("harpoon.ui").nav_prev, {desc= "[h]arpoon [p]rev file"})
 
---serch extension mine code but requires telescope
+--search extension mine code but requires telescope
 vim.keymap.set("n", "<leader>se", require("lukas.search_ext").prompt_for_extension, {desc = "[s]each files with [e]xtension"})
+
+-- easy align
+vim.keymap.set("v", "ga", "<cmd>EasyAlign<CR>", {desc = "Easy align"})
