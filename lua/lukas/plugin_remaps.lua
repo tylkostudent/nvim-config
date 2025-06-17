@@ -60,4 +60,4 @@ vim.keymap.set("n", "mp", require("harpoon.ui").nav_prev, {desc= "[h]arpoon [p]r
 vim.keymap.set("n", "<leader>se", require("lukas.search_ext").prompt_for_extension, {desc = "[s]each files with [e]xtension"})
 
 -- easy align
-vim.keymap.set("v", "ga", "<cmd>EasyAlign<CR>", {desc = "Easy align"})
+vim.keymap.set("v", "ga", "<cmd>EasyAlign", {desc = "Easy align"})
