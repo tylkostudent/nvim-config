@@ -41,9 +41,9 @@ return {
         },
         sources = {
           { name = 'nvim_lsp', dup = 0},
-          { name = 'luasnip', },
+          { name = 'luasnip', dup = 0},
           { name = 'path', },
-          { name = "buffer"},
+          { name = "buffer", dup = 0},
         },
       })
     end
