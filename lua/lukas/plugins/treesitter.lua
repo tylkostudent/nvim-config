@@ -5,9 +5,18 @@ return {
   build = ":TSUpdate",
   config = function ()
     require("nvim-treesitter.configs").setup({
-      auto_install = true,
-      highlight = {enable = true},
-      indent = {enable = true},
+      -- Only install the parsers you care about, excluding LaTeX
+      ensure_installed = {
+        "c", "cpp", "lua", "python", "rust", -- your preferred languages
+        -- Do NOT include "latex"
+      },
+      auto_install = false, -- disable auto_install to avoid pulling in LaTeX
+      highlight = {
+        enable = true,
+      },
+      indent = {
+        enable = true,
+      },
     })
   end
 }
