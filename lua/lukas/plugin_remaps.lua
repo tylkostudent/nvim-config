@@ -59,5 +59,9 @@ vim.keymap.set("n", "mp", require("harpoon.ui").nav_prev, {desc= "[h]arpoon [p]r
 --search extension mine code but requires telescope
 vim.keymap.set("n", "<leader>se", require("lukas.search_ext").prompt_for_extension, {desc = "[s]each files with [e]xtension"})
 
--- easy align
-vim.keymap.set("v", "ga", "<cmd>EasyAlign", {desc = "Easy align"})
+
+-- Visual mode mapping: Start EasyAlign interactively (e.g., vipga)
+vim.keymap.set('x', 'ga', '<Plug>(EasyAlign)', { noremap = false })
+
+-- Normal mode mapping: Start EasyAlign on a motion or text object (e.g., gaip)
+vim.keymap.set('n', 'ga', '<Plug>(EasyAlign)', { noremap = false })
