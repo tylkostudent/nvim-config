@@ -41,4 +41,5 @@ require('lazy').setup({
   require("lukas.plugins.verilog_auto_inst"),
   require("lukas.plugins.lazydev"),
   require("lukas.plugins.indent"),
+  'junegunn/vim-easy-align',
 })
