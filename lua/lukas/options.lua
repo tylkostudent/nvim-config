@@ -66,8 +66,8 @@ vim.cmd("set relativenumber");
 vim.cmd("set scrolloff=3")
 vim.cmd("set cursorline")
 vim.diagnostic.config({
-	severity_sort = true,
-	underline = {severity = vim.diagnostic.severity.ERROR},
-	virtual_text = {severity = vim.diagnostic.severity.ERROR},
+  severity_sort = true,
+  underline = {severity = vim.diagnostic.severity.ERROR},
+  virtual_text = {severity = vim.diagnostic.severity.ERROR},
 })
 vim.g.zig_fmt_autosave = 0

@@ -20,6 +20,7 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = lsp_servers,
+        automatic_installation = true,
       })
     end
   },
@@ -31,6 +32,22 @@ return {
       local lspconfig = require("lspconfig")
       for _, server in ipairs(lsp_servers) do
         lspconfig[server].setup({
+          on_attach = function ()
+            local bufnr = vim.api.nvim_get_current_buf()
+            local clients = vim.lsp.get_clients({ bufnr = bufnr })
+            local seen = {}
+
+            for _, client in ipairs(clients) do
+              if seen[client.name] then
+                -- duplicate found, stop this client
+                print("Stopping duplicate LSP client:", client.name, client.id)
+                client.stop()
+              else
+                -- first client of this name, mark as seen
+                seen[client.name] = true
+              end
+            end
+          end,
           capabilities = capabilities
         })
       end

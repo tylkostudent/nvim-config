@@ -20,6 +20,7 @@ vim.opt.rtp:prepend(lazypath)
 --    as they will be available in your neovim runtime.
 require('lazy').setup({
   require("lukas.plugins.telescope"),
+  require("lukas.plugins.better_quickfix"),
   require("lukas.plugins.colorscheme"),
   'jdhao/better-escape.vim',
   'nvim-lua/plenary.nvim', -- " don't forget to add this one if you don't have it yet!
@@ -35,7 +36,6 @@ require('lazy').setup({
   require("lukas.plugins.autocomplete"),
   require("lukas.plugins.lualine"),
   require("lukas.plugins.autopairs"),
-  require("lukas.plugins.better_quickfix"),
   require("lukas.plugins.which_key"),
   require("lukas.plugins.tmux"),
   require("lukas.plugins.verilog_auto_inst"),
