@@ -16,6 +16,7 @@ vim.g.have_nerd_font=true
 --  remove this option if you want your os clipboard to remain independent.
 --  see `:help 'clipboard'`
 vim.o.clipboard = 'unnamedplus'
+vim.o.shiftwidth = 4
 
 -- enable break indent
 vim.o.breakindent = true
