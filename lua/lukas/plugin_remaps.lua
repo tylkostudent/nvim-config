@@ -35,7 +35,6 @@ vim.keymap.set("n", "<leader>sw",
   function()
     require("telescope.builtin").grep_string({ 
       search = vim.fn.expand("<cword>"),
-      word_match = "-w",
     })
   end, 
   { desc = "Search word under cursor with Telescope" }
@@ -45,7 +44,7 @@ vim.keymap.set(
   'v', '<leader>sc', 
   function ()
     local text = require("lukas.functions_defs").get_visual_selection()
-    require('telescope.builtin').current_buffer_fuzzy_find({default_text = text, word_match = "-w"})
+    require('telescope.builtin').current_buffer_fuzzy_find({default_text = text})
   end,
   {desc = '[s]earch [c]urrent buffer'}
 )
@@ -53,7 +52,7 @@ vim.keymap.set(
 vim.keymap.set('v', '<leader>sa', 
   function ()
     local text = require("lukas.functions_defs").get_visual_selection()
-    require('telescope.builtin').grep_string({ search = text, word_match = "-w" })
+    require('telescope.builtin').grep_string({ search = text})
   end, 
   {desc = '[s]earch [a]ll buffers'}
 )
