@@ -5,6 +5,7 @@ local lsp_servers = {
   "svlangserver",
   "pyright",
   "pylsp",
+  "elixirls",
 }
 
 return {
