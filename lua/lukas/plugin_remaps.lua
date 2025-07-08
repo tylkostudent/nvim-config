@@ -24,17 +24,25 @@ vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, {desc = 'Signature Docu
 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, {desc = '[G]oto [D]eclaration'})
 vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, {desc = '[W]orkspace [A]dd Folder'})
 vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, {desc = '[W]orkspace [R]emove Folder'})
+
+vim.keymap.set("n", "K", function ()
+  vim.lsp.buf.hover({border = "rounded"})
+end)
+
+
 vim.keymap.set("n", "<leader>sw", function()
   require("telescope.builtin").grep_string({ search = vim.fn.expand("<cword>") })
 end, { desc = "Search word under cursor with Telescope" })
+
 vim.keymap.set(
-  'v', '<leader>sc', 
+  'v', '<leader>sc',
   function ()
     local text = require("lukas.functions_defs").get_visual_selection()
     require('telescope.builtin').current_buffer_fuzzy_find({default_text = text})
   end
   , {desc = '[s]earch [c]urrent buffer'}
 )
+
 vim.keymap.set('v', '<leader>sa', function ()
   local text = require("lukas.functions_defs").get_visual_selection()
   require('telescope.builtin').live_grep({ default_text = text })
