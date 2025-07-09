@@ -40,4 +40,5 @@ require('lazy').setup({
   require("lukas.plugins.tmux"),
   require("lukas.plugins.verilog_auto_inst"),
   require("lukas.plugins.lazydev"),
+  require("lukas.plugins.elixir-tools"),
 })
