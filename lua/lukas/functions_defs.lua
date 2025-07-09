@@ -6,8 +6,6 @@ local conf = require('telescope.config').values
 local actions = require('telescope.actions')
 local action_state = require('telescope.actions.state')
 
-
-
 Func.get_visual_selection = function()
   vim.cmd('noau normal! "vy"')
     local text = vim.fn.getreg('v')

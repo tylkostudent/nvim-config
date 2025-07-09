@@ -42,7 +42,6 @@ require('lazy').setup({
   require("lukas.plugins.lazydev"),
   require("lukas.plugins.indent"),
   'junegunn/vim-easy-align',
-  require("lukas.plugins.elixir-tools"),
   {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
