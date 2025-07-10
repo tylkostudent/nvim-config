@@ -24,6 +24,7 @@
   "nvim-web-devicons": { "branch": "master", "commit": "a1366758b3a232036dc97be8ca41184aa3f50506" },
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
   "rose-pine": { "branch": "main", "commit": "f93360149e9ed4df8677fbb07c7231ea0fd03b97" },
+  "rustaceanvim": { "branch": "master", "commit": "c86d5d36456fdaa91a3a9dddb4bac09c58fc8cd3" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "1f08ed60cafc8f6168b72b80be2b2ea149813e55" },
   "telescope.nvim": { "branch": "master", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },
   "verilog-autoinst.nvim": { "branch": "main", "commit": "0ade5c354efc8e49ce87cf82c82d3c9131cf463d" },

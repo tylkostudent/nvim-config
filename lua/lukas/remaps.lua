@@ -2,6 +2,7 @@ vim.keymap.set("n", "<leader>ex", "<cmd>:Ex<CR>")
 vim.keymap.set('n', '<leader>hs', '<cmd>:split<CR>')
 vim.keymap.set('n', '<leader>vs', '<cmd>:vs<CR>')
 
+vim.keymap.set('i', '<A-p>', '|>', {desc = "elixir pipe operator"})
 vim.keymap.set('n', '<leader>ex', '<cmd>:Ex<CR>')
 
 --vim.keymap.set('n', 'q+', '<C-w>+')
