@@ -1,11 +1,11 @@
 local lsp_servers = {
   "lua_ls",
-  "rust_analyzer",
   "gopls",
   "svlangserver",
   "pyright",
   "pylsp",
-  "elixirls"
+  "elixirls",
+  -- "rust_analyzer",
 }
 
 
@@ -47,8 +47,9 @@ return {
         local capabilities = require("cmp_nvim_lsp").default_capabilities()
         local lspconfig = require("lspconfig")
         for _, server in ipairs(lsp_servers) do
-          if server == "elixirls" then 
+          if server == "elixirls" then
             elixirls_setup(capabilities)
+          elseif server == "rust_analyzer" then
           else
             lspconfig[server].setup({
               capabilities = capabilities

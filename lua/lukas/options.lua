@@ -69,6 +69,6 @@ vim.cmd("set cursorline")
 vim.diagnostic.config({
   severity_sort = true,
   underline = {severity = vim.diagnostic.severity.ERROR},
-  virtual_text = {severity = vim.diagnostic.severity.ERROR},
+  virtual_text = {severity = {vim.diagnostic.severity.ERROR, vim.diagnostic.severity.INFO, vim.diagnostic.severity.HINT,}},
 })
 vim.g.zig_fmt_autosave = 0

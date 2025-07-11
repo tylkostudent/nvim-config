@@ -33,6 +33,11 @@ require('lazy').setup({
   require("lukas.plugins.neotree"),
   require("lukas.plugins.treesitter"),
   require("lukas.plugins.lsp_config"),
+  {
+    "chrisgrieser/nvim-lsp-endhints",
+    event = "LspAttach",
+    opts = {}, -- required, even if empty
+  },
   require("lukas.plugins.autocomplete"),
   require("lukas.plugins.lualine"),
   require("lukas.plugins.autopairs"),
@@ -49,9 +54,5 @@ require('lazy').setup({
     ---@type ibl.config
     opts = {},
   },
-  {
-    'mrcjkb/rustaceanvim',
-    version = '^6', -- Recommended
-    lazy = false, -- This plugin is already lazy
-  },
+  require("lukas.plugins.rust"),
 })
