@@ -56,4 +56,5 @@ require('lazy').setup({
   },
   require("lukas.plugins.rust"),
   {'akinsho/git-conflict.nvim', version = "*", config = true},
+  "sindrets/diffview.nvim",
 })
