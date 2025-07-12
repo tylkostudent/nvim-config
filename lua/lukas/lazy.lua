@@ -55,4 +55,5 @@ require('lazy').setup({
     opts = {},
   },
   require("lukas.plugins.rust"),
+  {'akinsho/git-conflict.nvim', version = "*", config = true},
 })

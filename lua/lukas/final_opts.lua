@@ -8,7 +8,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
 
     -- Stop any duplicate clients (same name, different ID, same buffer)
-    for _, other in ipairs(vim.lsp.get_active_clients({ bufnr = bufnr })) do
+    for _, other in ipairs(vim.lsp.get_clients({ bufnr = bufnr })) do
       if other.name == client.name and other.id ~= client.id then
         other.stop()
       end
