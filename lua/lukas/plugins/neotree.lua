@@ -9,31 +9,6 @@ return {
   },
   config = function()
     require("neo-tree").setup({
-      filesystem = {
-        filtered_items = {
-          visible = true,
-          hide_dotfiles = true,
-          hide_gitignored = true,
-          hide_hidden = true, -- only works on Windows for hidden files/directories
-          always_show = { -- remains visible even if other settings would normally hide it
-            ".gitignored",
-          },
-        },
-        renderers = {
-          file = {
-            { "icon" }, -- keep devicon!
-            { "name", zindex = 10 },
-            { "diagnostics", zindex = 20 },
-            { "git_status", zindex = 30, highlight = "NeoTreeGitIgnored" },
-          },
-          directory = {
-            { "icon" }, -- keep folder icon!
-            { "name", zindex = 10 },
-            { "diagnostics", zindex = 20 },
-            { "git_status", zindex = 30, highlight = "NeoTreeGitIgnored" },
-          },
-        },
-      },
       window = {
         mappings = {
           ["I"] = function(state, selected_nodes)
@@ -88,29 +63,6 @@ return {
             else
               vim.notify("All paths already present in .gitignore", vim.log.levels.INFO)
             end
-          end,
-
-          ["T"] = function(state)
-            local node = state.tree:get_node()
-            local absolute = node:get_id()
-            local relative = vim.fn.fnamemodify(absolute, ":.")
-            local name = vim.fn.fnamemodify(absolute, ":t")
-
-            local choices = {
-              { label = "Absolute path", value = absolute },
-              { label = "Relative path", value = relative },
-              { label = "Name only", value = name },
-            }
-
-            vim.ui.select(choices, {
-              prompt = "Copy which path?",
-              format_item = function(item) return item.label end,
-            }, function(choice)
-              if choice then
-                vim.fn.setreg("+", choice.value)
-                vim.notify("Copied: " .. choice.value)
-              end
-            end)
           end,
         },
       }
