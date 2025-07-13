@@ -64,6 +64,29 @@ return {
               vim.notify("All paths already present in .gitignore", vim.log.levels.INFO)
             end
           end,
+
+          ["Y"] = function(state)
+            local node = state.tree:get_node()
+            local absolute = node:get_id()
+            local relative = vim.fn.fnamemodify(absolute, ":.")
+            local name = vim.fn.fnamemodify(absolute, ":t")
+
+            local choices = {
+              { label = "Absolute path", value = absolute },
+              { label = "Relative path", value = relative },
+              { label = "Name only", value = name },
+            }
+
+            vim.ui.select(choices, {
+              prompt = "Copy which path?",
+              format_item = function(item) return item.label end,
+            }, function(choice)
+              if choice then
+                vim.fn.setreg("+", choice.value)
+                vim.notify("Copied: " .. choice.value)
+              end
+            end)
+          end,
         },
       }
     })
