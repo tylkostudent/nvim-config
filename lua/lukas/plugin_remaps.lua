@@ -31,9 +31,9 @@ vim.keymap.set("n", "K", function ()
 )
 
 
-vim.keymap.set("n", "<leader>sw", 
+vim.keymap.set("n", "<leader>sw",
   function()
-    require("telescope.builtin").grep_string({ 
+    require("telescope.builtin").grep_string({
       search = vim.fn.expand("<cword>"),
     })
   end, 
