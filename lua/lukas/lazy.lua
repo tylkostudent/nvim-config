@@ -47,14 +47,7 @@ require('lazy').setup({
   require("lukas.plugins.lazydev"),
   require("lukas.plugins.indent"),
   'junegunn/vim-easy-align',
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    main = "ibl",
-    ---@module "ibl"
-    ---@type ibl.config
-    opts = {},
-  },
   require("lukas.plugins.rust"),
-  {'akinsho/git-conflict.nvim', version = "*", config = true},
   "sindrets/diffview.nvim",
+  "darrikonn/vim-gofmt",
 })

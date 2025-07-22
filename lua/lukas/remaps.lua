@@ -116,3 +116,24 @@ vim.keymap.set("n", "<leader>ft", "<cmd>:Floaterminal<CR>", {desc = "tobble pers
 
 vim.keymap.set("n", "<leader>tw", "<cmd>:Telescope workspaces<CR>")
 
+--markdown bullet list
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "markdown" },  -- correct filetype
+  callback = function()
+    vim.keymap.set("n", "<C-l>", function()
+      local line = vim.api.nvim_get_current_line()
+
+      if line:match("^%- %[ %]") then
+        -- Toggle unchecked → checked
+        local new_line = line:gsub("^%- %[ %]", "- [x]", 1)
+        vim.api.nvim_set_current_line(new_line)
+      elseif line:match("^%- %[x%]") then
+        -- Toggle checked → unchecked
+        local new_line = line:gsub("^%- %[x%]", "- [ ]", 1)
+        vim.api.nvim_set_current_line(new_line)
+      else
+        vim.api.nvim_set_current_line("- [ ] " .. line)
+      end
+    end, { buffer = true, desc = "Toggle bullet list in markdown" })
+  end,
+})
