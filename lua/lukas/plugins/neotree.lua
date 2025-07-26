@@ -5,7 +5,6 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
     "MunifTanjim/nui.nvim",
-    -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
   },
   config = function()
     require("neo-tree").setup({
@@ -41,17 +40,24 @@ return {
             local lines = {}
             local exists = {}
             for _, line in ipairs(Path:new(gitignore_path):readlines()) do
-              lines[#lines+1] = line
+              lines[#lines + 1] = line
               exists[line] = true
             end
 
-            -- Add new lines
+            -- Add new entries
             local added = 0
             for _, node in ipairs(nodes) do
               local abs_path = node:get_id()
-              local rel_path = vim.fn.fnamemodify(abs_path, ":.") -- relative path
+              local rel_path = vim.fn.fnamemodify(abs_path, ":.")
+              rel_path = rel_path:gsub("\\", "/") -- Ensure forward slashes
+
+              -- Optional: add trailing slash for directories
+              if node.type == "directory" and not rel_path:match("/$") then
+                rel_path = rel_path .. "/"
+              end
+
               if not exists[rel_path] then
-                lines[#lines+1] = rel_path
+                lines[#lines + 1] = rel_path
                 exists[rel_path] = true
                 added = added + 1
               end
@@ -69,6 +75,7 @@ return {
             local node = state.tree:get_node()
             local absolute = node:get_id()
             local relative = vim.fn.fnamemodify(absolute, ":.")
+            relative = relative:gsub("\\", "/")
             local name = vim.fn.fnamemodify(absolute, ":t")
 
             local choices = {
@@ -92,6 +99,3 @@ return {
     })
   end
 }
-
-
-
