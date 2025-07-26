@@ -50,4 +50,5 @@ require('lazy').setup({
   require("lukas.plugins.rust"),
   "sindrets/diffview.nvim",
   "darrikonn/vim-gofmt",
+  "tpope/vim-fugitive",
 })
