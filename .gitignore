@@ -2,3 +2,4 @@ lazy-lock.json
 package-lock.json
 package.json
 .luarc.json
+lua/lukas/myplugins/codecks-api-keys.lua
