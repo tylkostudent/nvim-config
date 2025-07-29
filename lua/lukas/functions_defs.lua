@@ -1,5 +1,4 @@
 Func = {}
-local telescope = require('telescope')
 local pickers = require('telescope.pickers')
 local finders = require('telescope.finders')
 local conf = require('telescope.config').values
@@ -19,8 +18,8 @@ Func.get_visual_selection = function()
 end
 
 Func.disable_autoformat = function()
-  if vim.g.autoformat == 1 then 
-    vim.g.autoformat = 0; 
+  if vim.g.autoformat == 1 then
+    vim.g.autoformat = 0;
   end
 end
 

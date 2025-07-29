@@ -28,11 +28,11 @@ require('lazy').setup({
   'junegunn/fzf',
   "nvim-lua/plenary.nvim",
   'NMAC427/guess-indent.nvim',
-  "junegunn/vim-easy-align",
   require("lukas.plugins.harpoon"),
   require("lukas.plugins.neotree"),
   require("lukas.plugins.treesitter"),
   require("lukas.plugins.lsp_config"),
+  require("lukas.plugins.easy-align"),
   {
     "chrisgrieser/nvim-lsp-endhints",
     event = "LspAttach",

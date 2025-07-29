@@ -172,3 +172,16 @@ end, { desc = "Insert DOC block" })
 vim.keymap.set("n", "<leader>de", function()
   insert_block("EXACT", "ENDEXACT")
 end, { desc = "Insert EXACT block" })
+
+--lsp remaps
+vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = '[R]e[n]ame' })
+vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = '[C]ode [A]ction' })
+vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, { desc = 'Signature Documentation' })
+vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = '[G]oto [D]eclaration' })
+vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, { desc = '[W]orkspace [A]dd Folder' })
+vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, { desc = '[W]orkspace [R]emove Folder' })
+
+
+vim.keymap.set("n", "K", function()
+    vim.lsp.buf.hover({ border = "rounded" })
+end, { desc = "lsp hower action" })
