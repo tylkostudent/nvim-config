@@ -138,41 +138,6 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-local function get_comment_prefix()
-  local cs = vim.bo.commentstring
-  if not cs or cs == "" then return "//" end  -- fallback
-
-  -- extract prefix before the %s
-  local prefix = cs:match("^(.-)%%s")
-  if prefix then
-    return prefix:gsub("%s+$", "")  -- remove trailing space
-  else
-    return cs  -- fallback to raw commentstring
-  end
-end
-
-local function insert_block(start_tag, end_tag)
-  local comment = get_comment_prefix()
-  local row = vim.api.nvim_win_get_cursor(0)[1]
-
-  local lines = {
-    comment .. "!" .. start_tag,
-    comment .. "!" .. end_tag,
-  }
-
-  vim.api.nvim_buf_set_lines(0, row, row, false, lines)
-  -- Move cursor to the line between the tags
-  vim.api.nvim_win_set_cursor(0, { row + 1, #lines[1] })
-end
-
-vim.keymap.set("n", "<leader>db", function()
-  insert_block("DOC", "ENDDOC")
-end, { desc = "Insert DOC block" })
-
-vim.keymap.set("n", "<leader>de", function()
-  insert_block("EXACT", "ENDEXACT")
-end, { desc = "Insert EXACT block" })
-
 --lsp remaps
 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = '[R]e[n]ame' })
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = '[C]ode [A]ction' })
@@ -185,3 +150,4 @@ vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, { desc = 
 vim.keymap.set("n", "K", function()
     vim.lsp.buf.hover({ border = "rounded" })
 end, { desc = "lsp hower action" })
+

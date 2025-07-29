@@ -17,12 +17,6 @@ Func.get_visual_selection = function()
     end
 end
 
-Func.disable_autoformat = function()
-  if vim.g.autoformat == 1 then
-    vim.g.autoformat = 0;
-  end
-end
-
 
 Func.search_ext = function(ext)
   local uv = vim.loop
@@ -78,5 +72,5 @@ Func.search_ext_with_telescope = function(ext)
   }):find()
 end
 
-
 return Func
+
