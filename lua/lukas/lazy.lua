@@ -60,4 +60,5 @@ require('lazy').setup({
       -- refer to the configuration section below
     }
   },
+  require("lukas.plugins.indent-guides"),
 })
