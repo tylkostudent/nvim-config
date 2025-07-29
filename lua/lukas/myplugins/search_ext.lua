@@ -1,3 +1,19 @@
+local function list_files_git()
+  -- Returns both tracked and untracked (but not ignored) files
+  local cmd = {
+    "git",
+    "ls-files",
+    "--cached",       -- tracked files
+    "--others",       -- untracked files
+    "--exclude-standard"  -- respects .gitignore, .git/info/exclude, and core.excludesfile
+  }
+
+  local output = vim.fn.systemlist(cmd)
+
+  -- Convert to absolute paths if you want, or keep relative
+  return output
+end
+
 local function list_files(dir)
   local files = {}
   local scan = vim.loop.fs_scandir(dir)
@@ -20,7 +36,11 @@ local function list_files(dir)
 
     ::continue::
   end
-  return files
+
+  -- filter git ignored files
+  local git_files = list_files_git(files)
+
+  return git_files
 end
 
 local function get_extensions(files)
@@ -52,7 +72,7 @@ local function get_extensions(files)
 end
 
 local function choose_extension(callback)
-  local files = list_files(".")
+  local files = list_files_git()
   local extensions = get_extensions(files)
 
   if #extensions == 0 then
@@ -61,10 +81,20 @@ local function choose_extension(callback)
     return
   end
 
-  vim.ui.select(extensions, { prompt = "Choose a file extension:" }, function(choice)
+  -- Create numbered display labels
+  local items = {}
+  local index_to_ext = {}
+  for i, ext in ipairs(extensions) do
+    local label = string.format("%d. %s", i, ext)
+    table.insert(items, label)
+    index_to_ext[label] = ext  -- map label back to original extension
+  end
+
+  vim.ui.select(items, { prompt = "Choose a file extension:" }, function(choice)
     if choice then
-      print("You selected: " .. choice)
-      callback(choice)
+      local selected_ext = index_to_ext[choice]
+      print("You selected: " .. selected_ext)
+      callback(selected_ext)
     else
       print("No extension selected.")
       callback(nil)
