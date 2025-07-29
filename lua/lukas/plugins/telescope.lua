@@ -1,7 +1,28 @@
+local get_visual_selection = function()
+  vim.cmd('noau normal! "vy"')
+    local text = vim.fn.getreg('v')
+    vim.fn.setreg('v', {})
+    text = string.gsub(text, "\n", "")
+    if #text > 0 then
+      return text
+    else
+      return ""
+    end
+end
+
 local setup = function()
   local actions = require("telescope.actions")
   require('telescope').setup{
     defaults = {
+    vimgrep_arguments = {
+      'rg',
+      '--color=never',
+      '--no-heading',
+      '--with-filename',
+      '--line-number',
+      '--column',
+      '--smart-case',
+    },
       file_ignore_patterns = { "%.gd%.uid$" },
       mappings = {
         i = {
@@ -49,20 +70,17 @@ local setup = function()
 
   -- Visual mode
   vim.keymap.set("v", "<leader>sc", function()
-      local text = require("lukas.functions_defs").get_visual_selection()
+      local text = get_visual_selection()
       telescope.current_buffer_fuzzy_find({ default_text = text })
   end, { desc = "[s]earch [c]urrent buffer" })
 
   vim.keymap.set("v", "<leader>sa", function()
-      local text = require("lukas.functions_defs").get_visual_selection()
+      local text = get_visual_selection()
       telescope.grep_string({ search = text })
   end, { desc = "[s]earch [a]ll buffers" })
 
   -- Harpoon with Telescope
   vim.keymap.set("n", "mf", "<cmd>Telescope harpoon marks<CR>", { desc = "[s]how [m]arked files by harpoon" })
-
-  -- Custom search extension that uses telescope
-  vim.keymap.set("n", "<leader>se", require("lukas.search_ext").prompt_for_extension, { desc = "[s]each files with [e]xtension" })
 
   vim.keymap.set("n", "<leader>sw",
     function()
@@ -74,7 +92,7 @@ local setup = function()
   )
   vim.keymap.set('v', '<leader>sc',
     function ()
-      local text = require("lukas.functions_defs").get_visual_selection()
+      local text = get_visual_selection()
       require('telescope.builtin').current_buffer_fuzzy_find({default_text = text})
     end,
     {desc = '[s]earch [c]urrent buffer'}
@@ -82,16 +100,13 @@ local setup = function()
 
   vim.keymap.set('v', '<leader>sa', 
     function ()
-      local text = require("lukas.functions_defs").get_visual_selection()
+      local text = get_visual_selection()
       require('telescope.builtin').grep_string({ search = text})
     end,
     {desc = '[s]earch [a]ll buffers'}
   )
 
   vim.keymap.set("n", "<leader>fq", require"telescope.builtin".quickfix, {desc = "fuzzy find throught current quickfix list"})
-
-  --search extension mine code but requires telescope
-  vim.keymap.set("n", "<leader>se", require("lukas.search_ext").prompt_for_extension, {desc = "[s]each files with [e]xtension"})
 
 end
 
@@ -103,13 +118,6 @@ return {
     'nvim-lua/plenary.nvim',
     'ThePrimeagen/harpoon',
     "nvim-telescope/telescope-ui-select.nvim",
-    {
-      'nvim-telescope/telescope-fzf-native.nvim',
-      build = "make",
-      config = function()
-        pcall(require("telescope").load_extension, "fzf")
-      end,
-    },
   },
   config = function()
     setup()
