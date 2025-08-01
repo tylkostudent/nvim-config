@@ -61,4 +61,5 @@ require('lazy').setup({
     }
   },
   -- require("lukas.plugins.indent-guides"),
+  require("lukas.plugins.elixir-tools"),
 })

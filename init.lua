@@ -6,6 +6,5 @@ require("lukas.floaterminal")
 require("lukas.gogot_lsp")
 require("lukas.final_opts")
 
-require("lukas.myplugins.todo-codecks")
 require("lukas.myplugins.comment-block")
 require("lukas.myplugins.search_ext")
