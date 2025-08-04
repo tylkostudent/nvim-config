@@ -6,15 +6,16 @@ return {
     local elixir = require("elixir")
     local elixirls = require("elixir.elixirls")
 
+    local is_windows = vim.loop.os_uname().sysname == "Windows_NT"
+
     elixir.setup {
-      -- Disable nextls
       nextls = {
         enable = false,
       },
 
       elixirls = {
         enable = true,
-        cmd = { "D:\\Programy\\langserv\\elixir-ls-v0.28.0\\language_server.bat" },
+        cmd = is_windows and { "D:\\Programy\\LS\\elixir-ls-v0.28.0\\language_server.bat" } or nil,
         settings = elixirls.settings {
           dialyzerEnabled = false,
           enableTestLenses = false,
