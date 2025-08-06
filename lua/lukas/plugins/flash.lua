@@ -17,7 +17,13 @@ return {
         enabled = true,
       },
     },
+    label = {
+      before = true,  -- show label before the match text
+      after = false,  -- don't show label after the match
+      style = "inline",  -- place label inline (inside the text line)
+    },
   },
+
 
   config = true,
 
