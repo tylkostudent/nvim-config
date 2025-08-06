@@ -16,6 +16,9 @@ return {
       search = {
         enabled = true,
       },
+      char = {
+        keys = {},
+      },
     },
     label = {
       before = true,  -- show label before the match text
