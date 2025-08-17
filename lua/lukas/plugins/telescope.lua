@@ -98,7 +98,7 @@ local setup = function()
     {desc = '[s]earch [c]urrent buffer'}
   )
 
-  vim.keymap.set('v', '<leader>sa', 
+  vim.keymap.set('v', '<leader>sa',
     function ()
       local text = get_visual_selection()
       require('telescope.builtin').grep_string({ search = text})

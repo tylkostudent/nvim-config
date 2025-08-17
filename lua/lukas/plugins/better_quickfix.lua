@@ -5,6 +5,6 @@ return {
       preview = {
         auto_preview = false,
       }
-    })    
+    })
   end
 }

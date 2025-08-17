@@ -1,19 +1,5 @@
 return {
   {
-    "rose-pine/neovim",
-    name = "rose-pine",
-    config = function()
-      require("rose-pine").setup({
-        styles = {
-          italic = false,
-          bold = true,
-          transparency = true,
-        }
-      })
-      -- vim.cmd.colorscheme("rose-pine")
-    end
-  },
-  {
     "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000,
@@ -51,7 +37,23 @@ return {
             -- miscs = {}, -- Uncomment to turn off hard-coded styles
         },
         color_overrides = {},
-        custom_highlights = {},
+        custom_highlights = function(colors)
+          return {
+            -- Floating windows (Telescope, LSP popups, etc.)
+            NormalFloat = { bg = "none" },
+            FloatBorder = { bg = "none" },
+
+            -- Telescope specific
+            TelescopeNormal = { bg = "none" },
+            TelescopeBorder = { bg = "none" },
+            TelescopePromptNormal = { bg = "none" },
+            TelescopePromptBorder = { bg = "none" },
+
+            -- WhichKey
+            WhichKeyNormal = { bg = "none" },
+            WhichKeyBorder = { bg = "none" },
+          }
+        end,
         default_integrations = true,
         integrations = {
             cmp = true,
