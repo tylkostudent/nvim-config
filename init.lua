@@ -8,4 +8,3 @@ require("lukas.final_opts")
 
 require("lukas.myplugins.comment-block")
 require("lukas.myplugins.search_ext")
-require("lukas.myplugins.rename")
