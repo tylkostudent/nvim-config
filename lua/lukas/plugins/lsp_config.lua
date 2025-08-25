@@ -2,8 +2,7 @@ local lsp_servers = {
   "lua_ls",
   "gopls",
   "svlangserver",
-  "pyright",
-  "pylsp",
+  "basedpyright",
 }
 
 
