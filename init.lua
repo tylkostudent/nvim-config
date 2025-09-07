@@ -8,3 +8,6 @@ require("lukas.final_opts")
 
 require("lukas.myplugins.comment-block")
 require("lukas.myplugins.search_ext")
+require("lukas.plugins.elixir-tools")
+
+-- require("lukas.myplugins.godot-tools")
