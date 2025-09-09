@@ -47,8 +47,8 @@ require('lazy').setup({
   require("lukas.plugins.lazydev"),
   require("lukas.plugins.indent"),
   'junegunn/vim-easy-align',
+  require("lukas.plugins.git_fugitive"),
   require("lukas.plugins.rust"),
-  "tpope/vim-fugitive",
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
