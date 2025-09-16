@@ -72,3 +72,5 @@ vim.diagnostic.config({
   virtual_text = {severity = {vim.diagnostic.severity.ERROR, vim.diagnostic.severity.INFO, vim.diagnostic.severity.HINT,}},
 })
 vim.g.zig_fmt_autosave = 0
+
+vim.o.wrap = false
