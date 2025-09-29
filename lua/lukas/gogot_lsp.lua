@@ -7,6 +7,10 @@ local gdscript_config = {
 -- LSP command
 if vim.fn.has("win32") == 1 then
     -- Windows: requires nmap/ncat
+    --[[
+    in godot externbal editor flags are:
+    --server 127.0.0.1:6004 --remote-send "<esc>:n {file}<CR>:call cursor({line},{col})<CR>"
+    ]]
     gdscript_config.cmd = { "ncat", "localhost", os.getenv("GDScript_Port") or "6005" }
 else
     -- Linux/macOS: just use netcat (nc) or direct TCP
