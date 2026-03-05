@@ -19,6 +19,7 @@ end
 
 -- Godot external editor capabilities
 if vim.fn.filereadable(vim.fn.getcwd() .. "/project.godot") == 1 then
+    local addr
     if vim.fn.has("win32") == 1 then
         addr = "127.0.0.1:6004"
     else
@@ -28,6 +29,7 @@ if vim.fn.filereadable(vim.fn.getcwd() .. "/project.godot") == 1 then
         ]]
         addr = "./godot.pipe"  -- Unix domain socket for Linux/macOS
     end
+    vim.fn.serverstart(addr)
 end
 
 require("lspconfig").gdscript.setup(gdscript_config)
