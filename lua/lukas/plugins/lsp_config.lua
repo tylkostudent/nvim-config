@@ -1,11 +1,6 @@
 local auto_servers = {
   "basedpyright",
-}
-
-local servers = {
-  "lua_ls",
-  "basedpyright",
-  -- add other servers here (not auto-installed)
+  "lua_ls"
 }
 
 return {
@@ -24,17 +19,8 @@ return {
     },
     {
       "neovim/nvim-lspconfig",
+      lazy = true,
       dependencies = { "folke/neodev.nvim" },
-      config = function()
-        local capabilities = require("cmp_nvim_lsp").default_capabilities()
-        local lspconfig = require("lspconfig")
-
-        for _, server in ipairs(servers) do
-          lspconfig[server].setup({
-            capabilities = capabilities,
-          })
-        end
-      end,
     },
   },
 }
