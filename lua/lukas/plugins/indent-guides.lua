@@ -1,14 +1,13 @@
 return {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
-    ---@module "ibl"
-    ---@type ibl.config
-
     opts = {},
     config = function ()
         require("ibl").setup {
             enabled = false,
             indent = {
+                char = ">",
+                highlight = nil,
             },
             whitespace = { highlight = { "Whitespace", "NonText" } },
             scope = {
