@@ -4,6 +4,7 @@ local gdscript_config = {
     settings = {},
 }
 
+-- LSP command
 if vim.fn.has("win32") == 1 then
     -- Windows: requires nmap/ncat
     --[[
@@ -30,4 +31,6 @@ if vim.fn.filereadable(vim.fn.getcwd() .. "/project.godot") == 1 then
     end
     vim.fn.serverstart(addr)
 end
+
 vim.lsp.config("gdscript", gdscript_config)
+vim.lsp.enable("gdscript")
