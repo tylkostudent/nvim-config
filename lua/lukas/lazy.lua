@@ -30,7 +30,7 @@ require('lazy').setup({
   'NMAC427/guess-indent.nvim',
   require("lukas.plugins.harpoon"),
   require("lukas.plugins.neotree"),
-  require("lukas.plugins.treesitter"),
+  require("lukas.plugins.tree-sitter-manager"),
   require("lukas.plugins.lsp_config"),
   require("lukas.plugins.easy-align"),
   {
