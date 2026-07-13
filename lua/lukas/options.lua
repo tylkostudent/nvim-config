@@ -18,6 +18,7 @@ vim.g.have_nerd_font=true
 vim.o.clipboard = 'unnamedplus'
 vim.o.shiftwidth = 4
 vim.o.tabstop = 4
+vim.o.expandtab = true
 -- enable break indent
 vim.o.breakindent = true
 
