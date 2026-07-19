@@ -3,6 +3,7 @@ local gdscript_config = {
     on_attach = on_attach,
     settings = {},
 }
+print("hello")
 
 -- LSP command
 if vim.fn.has("win32") == 1 then
@@ -34,3 +35,9 @@ end
 
 vim.lsp.config("gdscript", gdscript_config)
 vim.lsp.enable("gdscript")
+vim.api.nvim_create_user_command("GodotLspReload", function()
+  vim.cmd("lsp stop")
+  vim.defer_fn(function()
+    vim.cmd("lsp enable")
+  end, 300)
+end, {})
