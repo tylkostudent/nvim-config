@@ -1,5 +1,21 @@
 return {
   'mrcjkb/rustaceanvim',
-  version = '^6', -- Recommended
-  lazy = false, -- This plugin is already lazy
+  version = '^6',
+  lazy = false,
+
+  config = function()
+    vim.g.rustaceanvim = {
+      server = {
+        settings = {
+          ["rust-analyzer"] = {
+            diagnostics = {
+              disabled = {
+                "unnecessary_return",
+              },
+            },
+          },
+        },
+      },
+    }
+  end,
 }

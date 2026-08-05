@@ -110,6 +110,15 @@ local setup = function()
 
 end
 
+vim.api.nvim_create_user_command("LF", function()
+  local telescope = require("telescope.builtin")
+  telescope.lsp_document_symbols({symbols = {"method", "function"}})
+end, {})
+
+vim.api.nvim_create_user_command("LV", function()
+  local telescope = require("telescope.builtin")
+  telescope.lsp_document_symbols({symbols = {"variable"}})
+end, {})
 
 return {
   'nvim-telescope/telescope.nvim',

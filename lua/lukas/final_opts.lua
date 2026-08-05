@@ -21,3 +21,4 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 vim.o.splitright = true
+

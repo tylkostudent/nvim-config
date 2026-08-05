@@ -4,10 +4,10 @@ require("lukas.remaps")
 require("lukas.lazy")
 require("lukas.floaterminal")
 require("lukas.godot_lsp")
-require("lukas.final_opts")
 
 require("lukas.myplugins.comment-block")
 require("lukas.myplugins.search_ext")
 require("lukas.plugins.elixir-tools")
 
+require("lukas.final_opts")
 -- require("lukas.myplugins.godot-tools")
