@@ -4,7 +4,7 @@ return {
     config = function()
         -- Define the two highlight groups
         vim.api.nvim_set_hl(0, "IndentBlanklineIndent1", { fg = "#8A8A8A", nocombine = true })
-        vim.api.nvim_set_hl(0, "IndentBlanklineIndent2", { fg = "#6A6A6A", nocombine = true })
+        vim.api.nvim_set_hl(0, "IndentBlanklineIndent2", { fg = "#4A4A4A", nocombine = true })
 
         -- ibl cycles through this list per indent level (level 1 -> level 2 -> ...)
         -- Repeat the dim group enough times to cover any realistic nesting depth
