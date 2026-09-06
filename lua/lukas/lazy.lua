@@ -55,8 +55,6 @@ require('lazy').setup({
     opts = {
     }
   },
-  -- require("lukas.plugins.indent-guides"),
-  require("lukas.plugins.elixir-tools"),
+  require("lukas.plugins.indent-guides"),
   require("lukas.plugins.flash"),
-  require("lukas.plugins.blank_line"),
 })
