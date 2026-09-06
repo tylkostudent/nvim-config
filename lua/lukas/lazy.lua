@@ -24,10 +24,10 @@ require('lazy').setup({
   require("lukas.plugins.colorscheme"),
   'jdhao/better-escape.vim',
   'nvim-lua/plenary.nvim', -- " don't forget to add this one if you don't have it yet!
-  'tpope/vim-sleuth',
+  -- 'tpope/vim-sleuth',
   'junegunn/fzf',
   "nvim-lua/plenary.nvim",
-  'NMAC427/guess-indent.nvim',
+  -- 'NMAC427/guess-indent.nvim',
   require("lukas.plugins.harpoon"),
   require("lukas.plugins.neotree"),
   require("lukas.plugins.tree-sitter-manager"),
